@@ -20,6 +20,7 @@ CURRENT_PACKAGE_VERSION	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build
 CURRENT_PACKAGE_VERSION	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day4/autogen/cabal_macros.h	/^#define CURRENT_PACKAGE_VERSION /;"	d
 CURRENT_PACKAGE_VERSION	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day5/autogen/cabal_macros.h	/^#define CURRENT_PACKAGE_VERSION /;"	d
 Changelog for adventOfCode2020	ChangeLog.md	/^# Changelog for adventOfCode2020$/;"	c
+IO	create-day	/^main :: IO()$/;"	f
 MIN_TOOL_VERSION_gcc	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/autogen/cabal_macros.h	/^#define MIN_TOOL_VERSION_gcc(/;"	d
 MIN_TOOL_VERSION_gcc	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day1/autogen/cabal_macros.h	/^#define MIN_TOOL_VERSION_gcc(/;"	d
 MIN_TOOL_VERSION_gcc	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day2/autogen/cabal_macros.h	/^#define MIN_TOOL_VERSION_gcc(/;"	d

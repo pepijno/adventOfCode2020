@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+
+input=$1
+
+if [ -z "$input" ]; then
+	echo "Please provide an argument"
+	exit 1
+fi
+
+FILE="app/Day${input}.hs"
+if [[ -f "$FILE" ]]; then
+    echo "Day $input already exists!"
+	exit 1
+fi
+
+package_input="\ \ day${input}:\n    main: Day${input}.hs\n    \<\<: \*exe-defaults"
+
+sed -i "/^executables:/a $package_input" package.yaml
+
+echo "module Main where
+
+import Lib
+
+solve1 :: [String] -> Int
+solve1 = undefined
+
+solve2 :: [String] -> Int
+solve2 = undefined
+
+main :: IO()
+main = mainWrapper \"day${input}\" [solve1, solve2]" >> $FILE
