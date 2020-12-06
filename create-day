@@ -25,7 +25,8 @@ solve1 :: [String] -> Int
 solve1 = undefined
 
 solve2 :: [String] -> Int
-solve2 = undefined
+solve2 = solve1
 
 main :: IO()
 main = mainWrapper \"day${input}\" [solve1, solve2]" >> $FILE
+git add $FILE

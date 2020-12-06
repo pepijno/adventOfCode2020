@@ -22,5 +22,5 @@ solve2 xs = head $ (\\) [min .. max] ids
     max = maximum ids
     min = minimum ids
 
-main :: IO()
+main :: IO ()
 main = mainWrapper "day5" [solve1, solve2]

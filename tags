@@ -12,6 +12,7 @@ CURRENT_COMPONENT_ID	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/da
 CURRENT_COMPONENT_ID	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day3/autogen/cabal_macros.h	/^#define CURRENT_COMPONENT_ID /;"	d
 CURRENT_COMPONENT_ID	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day4/autogen/cabal_macros.h	/^#define CURRENT_COMPONENT_ID /;"	d
 CURRENT_COMPONENT_ID	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day5/autogen/cabal_macros.h	/^#define CURRENT_COMPONENT_ID /;"	d
+CURRENT_COMPONENT_ID	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day6/autogen/cabal_macros.h	/^#define CURRENT_COMPONENT_ID /;"	d
 CURRENT_PACKAGE_KEY	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/autogen/cabal_macros.h	/^#define CURRENT_PACKAGE_KEY /;"	d
 CURRENT_PACKAGE_VERSION	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/autogen/cabal_macros.h	/^#define CURRENT_PACKAGE_VERSION /;"	d
 CURRENT_PACKAGE_VERSION	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day1/autogen/cabal_macros.h	/^#define CURRENT_PACKAGE_VERSION /;"	d
@@ -19,6 +20,7 @@ CURRENT_PACKAGE_VERSION	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build
 CURRENT_PACKAGE_VERSION	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day3/autogen/cabal_macros.h	/^#define CURRENT_PACKAGE_VERSION /;"	d
 CURRENT_PACKAGE_VERSION	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day4/autogen/cabal_macros.h	/^#define CURRENT_PACKAGE_VERSION /;"	d
 CURRENT_PACKAGE_VERSION	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day5/autogen/cabal_macros.h	/^#define CURRENT_PACKAGE_VERSION /;"	d
+CURRENT_PACKAGE_VERSION	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day6/autogen/cabal_macros.h	/^#define CURRENT_PACKAGE_VERSION /;"	d
 Changelog for adventOfCode2020	ChangeLog.md	/^# Changelog for adventOfCode2020$/;"	c
 IO	create-day	/^main :: IO()$/;"	f
 MIN_TOOL_VERSION_gcc	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/autogen/cabal_macros.h	/^#define MIN_TOOL_VERSION_gcc(/;"	d
@@ -27,126 +29,147 @@ MIN_TOOL_VERSION_gcc	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/da
 MIN_TOOL_VERSION_gcc	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day3/autogen/cabal_macros.h	/^#define MIN_TOOL_VERSION_gcc(/;"	d
 MIN_TOOL_VERSION_gcc	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day4/autogen/cabal_macros.h	/^#define MIN_TOOL_VERSION_gcc(/;"	d
 MIN_TOOL_VERSION_gcc	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day5/autogen/cabal_macros.h	/^#define MIN_TOOL_VERSION_gcc(/;"	d
+MIN_TOOL_VERSION_gcc	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day6/autogen/cabal_macros.h	/^#define MIN_TOOL_VERSION_gcc(/;"	d
 MIN_TOOL_VERSION_ghc	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/autogen/cabal_macros.h	/^#define MIN_TOOL_VERSION_ghc(/;"	d
 MIN_TOOL_VERSION_ghc	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day1/autogen/cabal_macros.h	/^#define MIN_TOOL_VERSION_ghc(/;"	d
 MIN_TOOL_VERSION_ghc	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day2/autogen/cabal_macros.h	/^#define MIN_TOOL_VERSION_ghc(/;"	d
 MIN_TOOL_VERSION_ghc	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day3/autogen/cabal_macros.h	/^#define MIN_TOOL_VERSION_ghc(/;"	d
 MIN_TOOL_VERSION_ghc	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day4/autogen/cabal_macros.h	/^#define MIN_TOOL_VERSION_ghc(/;"	d
 MIN_TOOL_VERSION_ghc	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day5/autogen/cabal_macros.h	/^#define MIN_TOOL_VERSION_ghc(/;"	d
+MIN_TOOL_VERSION_ghc	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day6/autogen/cabal_macros.h	/^#define MIN_TOOL_VERSION_ghc(/;"	d
 MIN_TOOL_VERSION_ghc_pkg	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/autogen/cabal_macros.h	/^#define MIN_TOOL_VERSION_ghc_pkg(/;"	d
 MIN_TOOL_VERSION_ghc_pkg	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day1/autogen/cabal_macros.h	/^#define MIN_TOOL_VERSION_ghc_pkg(/;"	d
 MIN_TOOL_VERSION_ghc_pkg	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day2/autogen/cabal_macros.h	/^#define MIN_TOOL_VERSION_ghc_pkg(/;"	d
 MIN_TOOL_VERSION_ghc_pkg	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day3/autogen/cabal_macros.h	/^#define MIN_TOOL_VERSION_ghc_pkg(/;"	d
 MIN_TOOL_VERSION_ghc_pkg	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day4/autogen/cabal_macros.h	/^#define MIN_TOOL_VERSION_ghc_pkg(/;"	d
 MIN_TOOL_VERSION_ghc_pkg	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day5/autogen/cabal_macros.h	/^#define MIN_TOOL_VERSION_ghc_pkg(/;"	d
+MIN_TOOL_VERSION_ghc_pkg	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day6/autogen/cabal_macros.h	/^#define MIN_TOOL_VERSION_ghc_pkg(/;"	d
 MIN_TOOL_VERSION_haddock	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/autogen/cabal_macros.h	/^#define MIN_TOOL_VERSION_haddock(/;"	d
 MIN_TOOL_VERSION_haddock	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day1/autogen/cabal_macros.h	/^#define MIN_TOOL_VERSION_haddock(/;"	d
 MIN_TOOL_VERSION_haddock	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day2/autogen/cabal_macros.h	/^#define MIN_TOOL_VERSION_haddock(/;"	d
 MIN_TOOL_VERSION_haddock	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day3/autogen/cabal_macros.h	/^#define MIN_TOOL_VERSION_haddock(/;"	d
 MIN_TOOL_VERSION_haddock	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day4/autogen/cabal_macros.h	/^#define MIN_TOOL_VERSION_haddock(/;"	d
 MIN_TOOL_VERSION_haddock	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day5/autogen/cabal_macros.h	/^#define MIN_TOOL_VERSION_haddock(/;"	d
+MIN_TOOL_VERSION_haddock	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day6/autogen/cabal_macros.h	/^#define MIN_TOOL_VERSION_haddock(/;"	d
 MIN_TOOL_VERSION_hpc	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/autogen/cabal_macros.h	/^#define MIN_TOOL_VERSION_hpc(/;"	d
 MIN_TOOL_VERSION_hpc	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day1/autogen/cabal_macros.h	/^#define MIN_TOOL_VERSION_hpc(/;"	d
 MIN_TOOL_VERSION_hpc	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day2/autogen/cabal_macros.h	/^#define MIN_TOOL_VERSION_hpc(/;"	d
 MIN_TOOL_VERSION_hpc	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day3/autogen/cabal_macros.h	/^#define MIN_TOOL_VERSION_hpc(/;"	d
 MIN_TOOL_VERSION_hpc	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day4/autogen/cabal_macros.h	/^#define MIN_TOOL_VERSION_hpc(/;"	d
 MIN_TOOL_VERSION_hpc	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day5/autogen/cabal_macros.h	/^#define MIN_TOOL_VERSION_hpc(/;"	d
+MIN_TOOL_VERSION_hpc	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day6/autogen/cabal_macros.h	/^#define MIN_TOOL_VERSION_hpc(/;"	d
 MIN_TOOL_VERSION_hsc2hs	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/autogen/cabal_macros.h	/^#define MIN_TOOL_VERSION_hsc2hs(/;"	d
 MIN_TOOL_VERSION_hsc2hs	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day1/autogen/cabal_macros.h	/^#define MIN_TOOL_VERSION_hsc2hs(/;"	d
 MIN_TOOL_VERSION_hsc2hs	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day2/autogen/cabal_macros.h	/^#define MIN_TOOL_VERSION_hsc2hs(/;"	d
 MIN_TOOL_VERSION_hsc2hs	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day3/autogen/cabal_macros.h	/^#define MIN_TOOL_VERSION_hsc2hs(/;"	d
 MIN_TOOL_VERSION_hsc2hs	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day4/autogen/cabal_macros.h	/^#define MIN_TOOL_VERSION_hsc2hs(/;"	d
 MIN_TOOL_VERSION_hsc2hs	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day5/autogen/cabal_macros.h	/^#define MIN_TOOL_VERSION_hsc2hs(/;"	d
+MIN_TOOL_VERSION_hsc2hs	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day6/autogen/cabal_macros.h	/^#define MIN_TOOL_VERSION_hsc2hs(/;"	d
 MIN_TOOL_VERSION_pkg_config	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/autogen/cabal_macros.h	/^#define MIN_TOOL_VERSION_pkg_config(/;"	d
 MIN_TOOL_VERSION_pkg_config	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day1/autogen/cabal_macros.h	/^#define MIN_TOOL_VERSION_pkg_config(/;"	d
 MIN_TOOL_VERSION_pkg_config	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day2/autogen/cabal_macros.h	/^#define MIN_TOOL_VERSION_pkg_config(/;"	d
 MIN_TOOL_VERSION_pkg_config	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day3/autogen/cabal_macros.h	/^#define MIN_TOOL_VERSION_pkg_config(/;"	d
 MIN_TOOL_VERSION_pkg_config	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day4/autogen/cabal_macros.h	/^#define MIN_TOOL_VERSION_pkg_config(/;"	d
 MIN_TOOL_VERSION_pkg_config	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day5/autogen/cabal_macros.h	/^#define MIN_TOOL_VERSION_pkg_config(/;"	d
+MIN_TOOL_VERSION_pkg_config	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day6/autogen/cabal_macros.h	/^#define MIN_TOOL_VERSION_pkg_config(/;"	d
 MIN_TOOL_VERSION_runghc	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/autogen/cabal_macros.h	/^#define MIN_TOOL_VERSION_runghc(/;"	d
 MIN_TOOL_VERSION_runghc	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day1/autogen/cabal_macros.h	/^#define MIN_TOOL_VERSION_runghc(/;"	d
 MIN_TOOL_VERSION_runghc	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day2/autogen/cabal_macros.h	/^#define MIN_TOOL_VERSION_runghc(/;"	d
 MIN_TOOL_VERSION_runghc	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day3/autogen/cabal_macros.h	/^#define MIN_TOOL_VERSION_runghc(/;"	d
 MIN_TOOL_VERSION_runghc	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day4/autogen/cabal_macros.h	/^#define MIN_TOOL_VERSION_runghc(/;"	d
 MIN_TOOL_VERSION_runghc	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day5/autogen/cabal_macros.h	/^#define MIN_TOOL_VERSION_runghc(/;"	d
+MIN_TOOL_VERSION_runghc	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day6/autogen/cabal_macros.h	/^#define MIN_TOOL_VERSION_runghc(/;"	d
 MIN_TOOL_VERSION_strip	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/autogen/cabal_macros.h	/^#define MIN_TOOL_VERSION_strip(/;"	d
 MIN_TOOL_VERSION_strip	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day1/autogen/cabal_macros.h	/^#define MIN_TOOL_VERSION_strip(/;"	d
 MIN_TOOL_VERSION_strip	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day2/autogen/cabal_macros.h	/^#define MIN_TOOL_VERSION_strip(/;"	d
 MIN_TOOL_VERSION_strip	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day3/autogen/cabal_macros.h	/^#define MIN_TOOL_VERSION_strip(/;"	d
 MIN_TOOL_VERSION_strip	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day4/autogen/cabal_macros.h	/^#define MIN_TOOL_VERSION_strip(/;"	d
 MIN_TOOL_VERSION_strip	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day5/autogen/cabal_macros.h	/^#define MIN_TOOL_VERSION_strip(/;"	d
+MIN_TOOL_VERSION_strip	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day6/autogen/cabal_macros.h	/^#define MIN_TOOL_VERSION_strip(/;"	d
 MIN_VERSION_adventOfCode2020	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/autogen/cabal_macros.h	/^#define MIN_VERSION_adventOfCode2020(/;"	d
 MIN_VERSION_adventOfCode2020	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day1/autogen/cabal_macros.h	/^#define MIN_VERSION_adventOfCode2020(/;"	d
 MIN_VERSION_adventOfCode2020	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day2/autogen/cabal_macros.h	/^#define MIN_VERSION_adventOfCode2020(/;"	d
 MIN_VERSION_adventOfCode2020	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day3/autogen/cabal_macros.h	/^#define MIN_VERSION_adventOfCode2020(/;"	d
 MIN_VERSION_adventOfCode2020	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day4/autogen/cabal_macros.h	/^#define MIN_VERSION_adventOfCode2020(/;"	d
 MIN_VERSION_adventOfCode2020	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day5/autogen/cabal_macros.h	/^#define MIN_VERSION_adventOfCode2020(/;"	d
+MIN_VERSION_adventOfCode2020	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day6/autogen/cabal_macros.h	/^#define MIN_VERSION_adventOfCode2020(/;"	d
 MIN_VERSION_base	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/autogen/cabal_macros.h	/^#define MIN_VERSION_base(/;"	d
 MIN_VERSION_base	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day1/autogen/cabal_macros.h	/^#define MIN_VERSION_base(/;"	d
 MIN_VERSION_base	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day2/autogen/cabal_macros.h	/^#define MIN_VERSION_base(/;"	d
 MIN_VERSION_base	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day3/autogen/cabal_macros.h	/^#define MIN_VERSION_base(/;"	d
 MIN_VERSION_base	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day4/autogen/cabal_macros.h	/^#define MIN_VERSION_base(/;"	d
 MIN_VERSION_base	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day5/autogen/cabal_macros.h	/^#define MIN_VERSION_base(/;"	d
+MIN_VERSION_base	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day6/autogen/cabal_macros.h	/^#define MIN_VERSION_base(/;"	d
 MIN_VERSION_split	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/autogen/cabal_macros.h	/^#define MIN_VERSION_split(/;"	d
 MIN_VERSION_split	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day1/autogen/cabal_macros.h	/^#define MIN_VERSION_split(/;"	d
 MIN_VERSION_split	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day2/autogen/cabal_macros.h	/^#define MIN_VERSION_split(/;"	d
 MIN_VERSION_split	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day3/autogen/cabal_macros.h	/^#define MIN_VERSION_split(/;"	d
 MIN_VERSION_split	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day4/autogen/cabal_macros.h	/^#define MIN_VERSION_split(/;"	d
 MIN_VERSION_split	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day5/autogen/cabal_macros.h	/^#define MIN_VERSION_split(/;"	d
+MIN_VERSION_split	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day6/autogen/cabal_macros.h	/^#define MIN_VERSION_split(/;"	d
 TOOL_VERSION_gcc	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/autogen/cabal_macros.h	/^#define TOOL_VERSION_gcc /;"	d
 TOOL_VERSION_gcc	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day1/autogen/cabal_macros.h	/^#define TOOL_VERSION_gcc /;"	d
 TOOL_VERSION_gcc	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day2/autogen/cabal_macros.h	/^#define TOOL_VERSION_gcc /;"	d
 TOOL_VERSION_gcc	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day3/autogen/cabal_macros.h	/^#define TOOL_VERSION_gcc /;"	d
 TOOL_VERSION_gcc	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day4/autogen/cabal_macros.h	/^#define TOOL_VERSION_gcc /;"	d
 TOOL_VERSION_gcc	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day5/autogen/cabal_macros.h	/^#define TOOL_VERSION_gcc /;"	d
+TOOL_VERSION_gcc	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day6/autogen/cabal_macros.h	/^#define TOOL_VERSION_gcc /;"	d
 TOOL_VERSION_ghc	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/autogen/cabal_macros.h	/^#define TOOL_VERSION_ghc /;"	d
 TOOL_VERSION_ghc	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day1/autogen/cabal_macros.h	/^#define TOOL_VERSION_ghc /;"	d
 TOOL_VERSION_ghc	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day2/autogen/cabal_macros.h	/^#define TOOL_VERSION_ghc /;"	d
 TOOL_VERSION_ghc	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day3/autogen/cabal_macros.h	/^#define TOOL_VERSION_ghc /;"	d
 TOOL_VERSION_ghc	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day4/autogen/cabal_macros.h	/^#define TOOL_VERSION_ghc /;"	d
 TOOL_VERSION_ghc	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day5/autogen/cabal_macros.h	/^#define TOOL_VERSION_ghc /;"	d
+TOOL_VERSION_ghc	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day6/autogen/cabal_macros.h	/^#define TOOL_VERSION_ghc /;"	d
 TOOL_VERSION_ghc_pkg	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/autogen/cabal_macros.h	/^#define TOOL_VERSION_ghc_pkg /;"	d
 TOOL_VERSION_ghc_pkg	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day1/autogen/cabal_macros.h	/^#define TOOL_VERSION_ghc_pkg /;"	d
 TOOL_VERSION_ghc_pkg	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day2/autogen/cabal_macros.h	/^#define TOOL_VERSION_ghc_pkg /;"	d
 TOOL_VERSION_ghc_pkg	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day3/autogen/cabal_macros.h	/^#define TOOL_VERSION_ghc_pkg /;"	d
 TOOL_VERSION_ghc_pkg	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day4/autogen/cabal_macros.h	/^#define TOOL_VERSION_ghc_pkg /;"	d
 TOOL_VERSION_ghc_pkg	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day5/autogen/cabal_macros.h	/^#define TOOL_VERSION_ghc_pkg /;"	d
+TOOL_VERSION_ghc_pkg	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day6/autogen/cabal_macros.h	/^#define TOOL_VERSION_ghc_pkg /;"	d
 TOOL_VERSION_haddock	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/autogen/cabal_macros.h	/^#define TOOL_VERSION_haddock /;"	d
 TOOL_VERSION_haddock	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day1/autogen/cabal_macros.h	/^#define TOOL_VERSION_haddock /;"	d
 TOOL_VERSION_haddock	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day2/autogen/cabal_macros.h	/^#define TOOL_VERSION_haddock /;"	d
 TOOL_VERSION_haddock	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day3/autogen/cabal_macros.h	/^#define TOOL_VERSION_haddock /;"	d
 TOOL_VERSION_haddock	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day4/autogen/cabal_macros.h	/^#define TOOL_VERSION_haddock /;"	d
 TOOL_VERSION_haddock	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day5/autogen/cabal_macros.h	/^#define TOOL_VERSION_haddock /;"	d
+TOOL_VERSION_haddock	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day6/autogen/cabal_macros.h	/^#define TOOL_VERSION_haddock /;"	d
 TOOL_VERSION_hpc	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/autogen/cabal_macros.h	/^#define TOOL_VERSION_hpc /;"	d
 TOOL_VERSION_hpc	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day1/autogen/cabal_macros.h	/^#define TOOL_VERSION_hpc /;"	d
 TOOL_VERSION_hpc	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day2/autogen/cabal_macros.h	/^#define TOOL_VERSION_hpc /;"	d
 TOOL_VERSION_hpc	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day3/autogen/cabal_macros.h	/^#define TOOL_VERSION_hpc /;"	d
 TOOL_VERSION_hpc	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day4/autogen/cabal_macros.h	/^#define TOOL_VERSION_hpc /;"	d
 TOOL_VERSION_hpc	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day5/autogen/cabal_macros.h	/^#define TOOL_VERSION_hpc /;"	d
+TOOL_VERSION_hpc	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day6/autogen/cabal_macros.h	/^#define TOOL_VERSION_hpc /;"	d
 TOOL_VERSION_hsc2hs	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/autogen/cabal_macros.h	/^#define TOOL_VERSION_hsc2hs /;"	d
 TOOL_VERSION_hsc2hs	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day1/autogen/cabal_macros.h	/^#define TOOL_VERSION_hsc2hs /;"	d
 TOOL_VERSION_hsc2hs	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day2/autogen/cabal_macros.h	/^#define TOOL_VERSION_hsc2hs /;"	d
 TOOL_VERSION_hsc2hs	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day3/autogen/cabal_macros.h	/^#define TOOL_VERSION_hsc2hs /;"	d
 TOOL_VERSION_hsc2hs	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day4/autogen/cabal_macros.h	/^#define TOOL_VERSION_hsc2hs /;"	d
 TOOL_VERSION_hsc2hs	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day5/autogen/cabal_macros.h	/^#define TOOL_VERSION_hsc2hs /;"	d
+TOOL_VERSION_hsc2hs	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day6/autogen/cabal_macros.h	/^#define TOOL_VERSION_hsc2hs /;"	d
 TOOL_VERSION_pkg_config	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/autogen/cabal_macros.h	/^#define TOOL_VERSION_pkg_config /;"	d
 TOOL_VERSION_pkg_config	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day1/autogen/cabal_macros.h	/^#define TOOL_VERSION_pkg_config /;"	d
 TOOL_VERSION_pkg_config	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day2/autogen/cabal_macros.h	/^#define TOOL_VERSION_pkg_config /;"	d
 TOOL_VERSION_pkg_config	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day3/autogen/cabal_macros.h	/^#define TOOL_VERSION_pkg_config /;"	d
 TOOL_VERSION_pkg_config	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day4/autogen/cabal_macros.h	/^#define TOOL_VERSION_pkg_config /;"	d
 TOOL_VERSION_pkg_config	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day5/autogen/cabal_macros.h	/^#define TOOL_VERSION_pkg_config /;"	d
+TOOL_VERSION_pkg_config	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day6/autogen/cabal_macros.h	/^#define TOOL_VERSION_pkg_config /;"	d
 TOOL_VERSION_runghc	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/autogen/cabal_macros.h	/^#define TOOL_VERSION_runghc /;"	d
 TOOL_VERSION_runghc	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day1/autogen/cabal_macros.h	/^#define TOOL_VERSION_runghc /;"	d
 TOOL_VERSION_runghc	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day2/autogen/cabal_macros.h	/^#define TOOL_VERSION_runghc /;"	d
 TOOL_VERSION_runghc	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day3/autogen/cabal_macros.h	/^#define TOOL_VERSION_runghc /;"	d
 TOOL_VERSION_runghc	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day4/autogen/cabal_macros.h	/^#define TOOL_VERSION_runghc /;"	d
 TOOL_VERSION_runghc	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day5/autogen/cabal_macros.h	/^#define TOOL_VERSION_runghc /;"	d
+TOOL_VERSION_runghc	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day6/autogen/cabal_macros.h	/^#define TOOL_VERSION_runghc /;"	d
 TOOL_VERSION_strip	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/autogen/cabal_macros.h	/^#define TOOL_VERSION_strip /;"	d
 TOOL_VERSION_strip	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day1/autogen/cabal_macros.h	/^#define TOOL_VERSION_strip /;"	d
 TOOL_VERSION_strip	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day2/autogen/cabal_macros.h	/^#define TOOL_VERSION_strip /;"	d
 TOOL_VERSION_strip	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day3/autogen/cabal_macros.h	/^#define TOOL_VERSION_strip /;"	d
 TOOL_VERSION_strip	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day4/autogen/cabal_macros.h	/^#define TOOL_VERSION_strip /;"	d
 TOOL_VERSION_strip	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day5/autogen/cabal_macros.h	/^#define TOOL_VERSION_strip /;"	d
+TOOL_VERSION_strip	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day6/autogen/cabal_macros.h	/^#define TOOL_VERSION_strip /;"	d
 Unreleased changes	ChangeLog.md	/^## Unreleased changes$/;"	s
 VERSION_adventOfCode2020	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/autogen/cabal_macros.h	/^#define VERSION_adventOfCode2020 /;"	d
 VERSION_adventOfCode2020	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day1/autogen/cabal_macros.h	/^#define VERSION_adventOfCode2020 /;"	d
@@ -154,18 +177,21 @@ VERSION_adventOfCode2020	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/buil
 VERSION_adventOfCode2020	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day3/autogen/cabal_macros.h	/^#define VERSION_adventOfCode2020 /;"	d
 VERSION_adventOfCode2020	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day4/autogen/cabal_macros.h	/^#define VERSION_adventOfCode2020 /;"	d
 VERSION_adventOfCode2020	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day5/autogen/cabal_macros.h	/^#define VERSION_adventOfCode2020 /;"	d
+VERSION_adventOfCode2020	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day6/autogen/cabal_macros.h	/^#define VERSION_adventOfCode2020 /;"	d
 VERSION_base	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/autogen/cabal_macros.h	/^#define VERSION_base /;"	d
 VERSION_base	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day1/autogen/cabal_macros.h	/^#define VERSION_base /;"	d
 VERSION_base	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day2/autogen/cabal_macros.h	/^#define VERSION_base /;"	d
 VERSION_base	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day3/autogen/cabal_macros.h	/^#define VERSION_base /;"	d
 VERSION_base	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day4/autogen/cabal_macros.h	/^#define VERSION_base /;"	d
 VERSION_base	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day5/autogen/cabal_macros.h	/^#define VERSION_base /;"	d
+VERSION_base	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day6/autogen/cabal_macros.h	/^#define VERSION_base /;"	d
 VERSION_split	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/autogen/cabal_macros.h	/^#define VERSION_split /;"	d
 VERSION_split	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day1/autogen/cabal_macros.h	/^#define VERSION_split /;"	d
 VERSION_split	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day2/autogen/cabal_macros.h	/^#define VERSION_split /;"	d
 VERSION_split	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day3/autogen/cabal_macros.h	/^#define VERSION_split /;"	d
 VERSION_split	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day4/autogen/cabal_macros.h	/^#define VERSION_split /;"	d
 VERSION_split	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day5/autogen/cabal_macros.h	/^#define VERSION_split /;"	d
+VERSION_split	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/day6/autogen/cabal_macros.h	/^#define VERSION_split /;"	d
 abi	.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/package.conf.inplace/adventOfCode2020-0.1.0.0-Aj5vzMVSWDc7boMg4L9ZEg.conf	/^abi:                  inplace$/;"	k
 abi	.stack-work/install/x86_64-linux-tinfo6/033ce058bc1f5802b2860e57b4ea978426f72cda2994a67e789a274b6508f7c8/8.8.4/pkgdb/adventOfCode2020-0.1.0.0-Aj5vzMVSWDc7boMg4L9ZEg.conf	/^abi:                  d94f5579cab71573e16b26c197b81dfd$/;"	k
 adventOfCode2020	README.md	/^# adventOfCode2020$/;"	c

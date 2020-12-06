@@ -37,6 +37,9 @@ _exe-defs: &exe-defaults
   - -with-rtsopts=-N
 
 executables:
+  day6:
+    main:                Day6.hs
+    <<: *exe-defaults
   day5:
     main:                Day5.hs
     <<: *exe-defaults

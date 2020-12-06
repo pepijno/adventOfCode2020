@@ -37,5 +37,5 @@ checkPassword2 l = (f == c) /= (a == c)
 solve2 :: [String] -> Int
 solve2 = sum . map (fromEnum . checkPassword2 . parseLine)
 
-main :: IO()
+main :: IO ()
 main = mainWrapper "day2" [solve1, solve2]

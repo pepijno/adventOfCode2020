@@ -50,5 +50,5 @@ validPassport2 pp = validPassport1 pp && (all isValid pp)
 solve2 :: [String] -> Int
 solve2 = length . filter validPassport2 . map parse . grouping
 
-main :: IO()
+main :: IO ()
 main = mainWrapper "day4" [solve1, solve2]

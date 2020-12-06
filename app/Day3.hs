@@ -17,6 +17,6 @@ solve1 = nTrees (3,1)
 solve2 :: [String] -> Int
 solve2 xs = product $ map (flip nTrees xs) [(1,1),(3,1),(5,1),(7,1),(1,2)]
 
-main :: IO()
+main :: IO ()
 main = mainWrapper "day3" [solve1, solve2]
 

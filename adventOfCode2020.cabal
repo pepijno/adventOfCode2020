@@ -90,6 +90,17 @@ executable day5
     , split
   default-language: Haskell2010
 
+executable day6
+  main-is: Day6.hs
+  hs-source-dirs:
+      app
+  ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      adventOfCode2020
+    , base >=4.7 && <5
+    , split
+  default-language: Haskell2010
+
 test-suite adventOfCode2020-test
   type: exitcode-stdio-1.0
   main-is: Spec.hs
