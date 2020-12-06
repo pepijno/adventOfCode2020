@@ -26,6 +26,15 @@ library:
   source-dirs: src
 
 executables:
+  day1:
+    main:                Main.hs
+    source-dirs:         app/day1
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - adventOfCode2020
 
 tests:
   adventOfCode2020-test:
