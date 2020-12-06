@@ -25,60 +25,36 @@ dependencies:
 library:
   source-dirs: src
 
+_exe-defs: &exe-defaults
+  other-modules: []
+  source-dirs: app
+  dependencies:
+  - adventOfCode2020
+  ghc-options:
+  - -O2
+  - -threaded
+  - -rtsopts
+  - -with-rtsopts=-N
+
 executables:
   day5:
-    main:                Main.hs
-    source-dirs:         app/day5
-    ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N
-    dependencies:
-    - adventOfCode2020
+    main:                Day5.hs
+    <<: *exe-defaults
   day4:
-    main:                Main.hs
-    source-dirs:         app/day4
-    ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N
-    dependencies:
-    - adventOfCode2020
+    main:                Day4.hs
+    <<: *exe-defaults
   day3:
-    main:                Main.hs
-    source-dirs:         app/day3
-    ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N
-    dependencies:
-    - adventOfCode2020
+    main:                Day3.hs
+    <<: *exe-defaults
   day2:
-    main:                Main.hs
-    source-dirs:         app/day2
-    ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N
-    dependencies:
-    - adventOfCode2020
+    main:                Day2.hs
+    <<: *exe-defaults
   day1:
-    main:                Main.hs
-    source-dirs:         app/day1
-    ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N
-    dependencies:
-    - adventOfCode2020
+    main:                Day1.hs
+    <<: *exe-defaults
 
 tests:
   adventOfCode2020-test:
     main:                Spec.hs
     source-dirs:         test
-    ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N
-    dependencies:
-    - adventOfCode2020
+    <<: *exe-defaults
