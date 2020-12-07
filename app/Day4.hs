@@ -26,14 +26,14 @@ isValid kp
         xx = drop (length v - 2) v
         yy = read $ take (length v - 2) v
 
-toKeyValue :: [String] -> KeyValue
-toKeyValue (x:xs) = KeyValue { key = x, value = head xs }
+parsePair :: Parser KeyValue
+parsePair = KeyValue <$> (letters <* char ':') <*> stringLiteral
 
 grouping :: [String] -> [[String]]
 grouping = map (concat . map words) . groupPairs
 
-parse :: [String] -> Passport
-parse = map (toKeyValue . splitOn ":")
+parsePassport :: [String] -> Passport
+parsePassport = map (unsafeParse parsePair)
 
 validPassport1 :: Passport -> Bool
 validPassport1 pp = (l == 8) || ((l == 7) && not ("cid" `elem` keys))
@@ -42,13 +42,13 @@ validPassport1 pp = (l == 8) || ((l == 7) && not ("cid" `elem` keys))
     l = length keys
 
 solve1 :: [String] -> Int
-solve1 = length . filter validPassport1 . map parse . grouping
+solve1 = length . filter validPassport1 . map parsePassport . grouping
 
 validPassport2 :: Passport -> Bool
 validPassport2 pp = validPassport1 pp && (all isValid pp)
 
 solve2 :: [String] -> Int
-solve2 = length . filter validPassport2 . map parse . grouping
+solve2 = length . filter validPassport2 . map parsePassport . grouping
 
 main :: IO ()
 main = mainWrapper "day4" [solve1, solve2]

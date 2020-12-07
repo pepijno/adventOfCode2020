@@ -3,10 +3,6 @@
 module Main where
 
 import Lib
-import Data.List.Split
-import Data.Attoparsec.Text (Parser, char, anyChar, decimal, parseOnly, space, many1, letter)
-import Prelude hiding (lines)
-import Data.Text (Text, pack, lines)
 
 data Line = Line {
     mini :: Int,
@@ -16,12 +12,7 @@ data Line = Line {
 } deriving (Show)
 
 parseLine :: Parser Line
-parseLine = Line <$> decimal <*> ("-" *> decimal <* space) <*> (anyChar <* ": ") <*> (many1 letter)
-
-unsafeParse :: Text -> Line
-unsafeParse = fromRight . parseOnly parseLine
-  where fromRight (Right a) = a
-        fromRight b = error $ "failed to parse " ++ (show b)
+parseLine = Line <$> integer <* char '-' <*> integer <* whiteSpace <*> anyChar <* string ": " <*> stringLiteral
 
 checkPassword1 :: Line -> Bool
 checkPassword1 l = inRange c (mini l) (maxi l)
@@ -29,7 +20,7 @@ checkPassword1 l = inRange c (mini l) (maxi l)
     c = length . filter (== (ch l)) $ password l
 
 solve1 :: [String] -> Int
-solve1 = sum . map (fromEnum . checkPassword1 . unsafeParse . pack)
+solve1 = sum . map (fromEnum . checkPassword1 . unsafeParse parseLine)
 
 checkPassword2 :: Line -> Bool
 checkPassword2 l = (f == c) /= (a == c)
@@ -39,7 +30,7 @@ checkPassword2 l = (f == c) /= (a == c)
     c = ch l
 
 solve2 :: [String] -> Int
-solve2 = sum . map (fromEnum . checkPassword2 . unsafeParse . pack)
+solve2 = sum . map (fromEnum . checkPassword2 . unsafeParse parseLine)
 
 main :: IO ()
 main = mainWrapper "day2" [solve1, solve2]

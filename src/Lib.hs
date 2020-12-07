@@ -5,14 +5,18 @@ module Lib (
 
   Parser,
   parse,
+  unsafeParse,
   char,
+  anyChar,
   string,
   integer,
   stringLiteral,
-  whiteSpace
+  whiteSpace,
+  letters
 ) where
 
 import Data.Char
+import Data.Maybe
 import Data.List.Split
 import Control.Applicative
 
@@ -45,11 +49,19 @@ instance Alternative Parser where
   empty = Parser $ const Nothing
   (Parser a) <|> (Parser b) = Parser $ \input -> (a input) <|> (b input)
 
+unsafeParse :: Parser a -> String -> a
+unsafeParse p = fst . fromJust . parse p
+
 char :: Char -> Parser Char
 char c = Parser f
   where f (x:rest)
           | x == c = Just (x, rest)
           | otherwise = Nothing
+        f [] = Nothing
+
+anyChar :: Parser Char
+anyChar = Parser f
+  where f (x:rest) = Just (x, rest)
         f [] = Nothing
 
 string :: String -> Parser String
@@ -64,5 +76,8 @@ integer = read <$> splitBy isDigit
 whiteSpace :: Parser String
 whiteSpace = splitBy isSpace
 
+letters :: Parser String
+letters = splitBy isLetter
+
 stringLiteral :: Parser String
-stringLiteral = splitBy isLetter
+stringLiteral = splitBy (not . isSpace)
