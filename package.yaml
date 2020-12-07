@@ -23,6 +23,8 @@ dependencies:
 - split
 - attoparsec
 - text
+- array
+- containers
 
 library:
   source-dirs: src
@@ -39,6 +41,9 @@ _exe-defs: &exe-defaults
   - -with-rtsopts=-N
 
 executables:
+  day7:
+    main: Day7.hs
+    <<: *exe-defaults
   day6:
     main:                Day6.hs
     <<: *exe-defaults
