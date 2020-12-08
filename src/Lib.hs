@@ -10,6 +10,7 @@ module Lib (
   anyChar,
   string,
   integer,
+  natural,
   stringLiteral,
   whiteSpace,
   letters
@@ -69,6 +70,9 @@ string = sequenceA . map char
 
 splitBy :: (Char -> Bool) -> Parser String
 splitBy f = Parser $ \input -> Just $ span f input
+
+natural :: Parser Int
+natural = read <$> splitBy isDigit
 
 integer :: Parser Int
 integer = read <$> splitBy (\x -> isDigit x || x == '-')
