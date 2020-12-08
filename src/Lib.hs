@@ -71,7 +71,7 @@ splitBy :: (Char -> Bool) -> Parser String
 splitBy f = Parser $ \input -> Just $ span f input
 
 integer :: Parser Int
-integer = read <$> splitBy isDigit
+integer = read <$> splitBy (\x -> isDigit x || x == '-')
 
 whiteSpace :: Parser String
 whiteSpace = splitBy isSpace
