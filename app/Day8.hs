@@ -1,9 +1,9 @@
 module Main where
 
 import Lib
+import Parser
 import qualified Data.Map as M
 import Data.Maybe
-import Control.Applicative
 
 data Instruction = Jmp Int | Acc Int | Nop Int deriving (Show, Eq)
 

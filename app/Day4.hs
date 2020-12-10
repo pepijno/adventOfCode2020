@@ -1,6 +1,7 @@
 module Main where
 
 import Lib
+import Parser
 import Data.Char
 import Data.List.Split
 

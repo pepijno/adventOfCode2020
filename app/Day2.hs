@@ -3,6 +3,7 @@
 module Main where
 
 import Lib
+import Parser
 
 data Line = Line {
     mini :: Int,

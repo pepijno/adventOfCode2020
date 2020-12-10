@@ -1,7 +1,7 @@
 module Main where
 
 import Lib
-import Control.Applicative
+import Parser
 import Data.Maybe
 import qualified Data.Map as M
 import qualified Data.Set as S
