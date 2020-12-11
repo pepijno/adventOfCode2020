@@ -25,9 +25,9 @@ source-repository head
 
 library
   exposed-modules:
+      Grid
       Lib
       Parser
-      SegmentTree
   other-modules:
       Paths_adventOfCode2020
   hs-source-dirs:
