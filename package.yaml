@@ -22,6 +22,7 @@ dependencies:
 - base >= 4.7 && < 5
 - split
 - containers
+- extra
 
 library:
   source-dirs: src
@@ -38,6 +39,9 @@ _exe-defs: &exe-defaults
   - -with-rtsopts=-N
 
 executables:
+  day11:
+    main: Day11.hs
+    <<: *exe-defaults
   day10:
     main: Day10.hs
     <<: *exe-defaults
@@ -74,3 +78,7 @@ tests:
     main:                Spec.hs
     source-dirs:         test
     <<: *exe-defaults
+
+default-extensions:
+  - TypeApplications
+  - LambdaCase

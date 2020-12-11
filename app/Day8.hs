@@ -54,4 +54,4 @@ solve2 :: [String] -> Int
 solve2 = head . catMaybes . map (runProgram2 0 0 . M.fromList . zip [0..] . zip (repeat False)) . replaceProg . map (unsafeParse parseInstruction)
 
 main :: IO()
-main = mainWrapper "day8" [solve1, solve2]
+main = mainWrapper "day8" solve1 solve2

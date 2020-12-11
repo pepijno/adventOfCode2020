@@ -10,4 +10,4 @@ solve2 :: [String] -> Int
 solve2 = sum . map (length . foldr1 intersect) . groupPairs
 
 main :: IO ()
-main = mainWrapper "day6" [solve1, solve2]
+main = mainWrapper "day6" solve1 solve2

@@ -29,4 +29,4 @@ solve2 :: [String] -> Int
 solve2 = sum . (<*>) [minimum, maximum] . init . filter ((==) 57195069 . sum) . subs . map read
 
 main :: IO()
-main = mainWrapper "day9" [solve1, solve2]
+main = mainWrapper "day9" solve1 solve2

@@ -55,4 +55,4 @@ solve2 :: [String] -> Int
 solve2 = countChildren "shinygold" . M.fromList . parseAll
 
 main :: IO()
-main = mainWrapper "day7" [solve1, solve2]
+main = mainWrapper "day7" solve1 solve2

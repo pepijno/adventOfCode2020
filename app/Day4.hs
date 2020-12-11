@@ -50,4 +50,4 @@ solve2 :: [String] -> Int
 solve2 = length . filter (validPassport2 . parsePassport) . grouping
 
 main :: IO ()
-main = mainWrapper "day4" [solve1, solve2]
+main = mainWrapper "day4" solve1 solve2

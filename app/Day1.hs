@@ -13,4 +13,4 @@ solve2 xs = head $ [x * y * z | x <- ys, y <- ys, z <- ys, x + y + z == 2020]
     ys = map read xs
 
 main :: IO ()
-main = mainWrapper "day1" [solve1, solve2]
+main = mainWrapper "day1" solve1 solve2

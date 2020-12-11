@@ -27,4 +27,4 @@ solve2 :: [String] -> Int
 solve2 = foldl countArranges 1 . group . diffs . map read
 
 main :: IO()
-main = mainWrapper "day10" [solve1, solve2]
+main = mainWrapper "day10" solve1 solve2

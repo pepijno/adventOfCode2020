@@ -34,4 +34,4 @@ solve2 :: [String] -> Int
 solve2 = length . filter (checkPassword2 . unsafeParse parseLine)
 
 main :: IO ()
-main = mainWrapper "day2" [solve1, solve2]
+main = mainWrapper "day2" solve1 solve2
