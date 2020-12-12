@@ -14,6 +14,12 @@ data Dir8 = N | NE | E | SE | S | SW | W | NW deriving (Show, Eq, Enum, Ord, Bou
 (!+) :: Coord -> Coord -> Coord
 (!+) (a,b) (x,y) = (a+x, b+y)
 
+(!-) :: Coord -> Coord -> Coord
+(!-) (a,b) (x,y) = (a-x, b-y)
+
+(!*) :: Int -> Coord -> Coord
+(!*) i (x, y) = (i * x, i * y)
+
 dir4, dir8 :: [(Int, Int)]
 dir4 = [(-1, 0), (1, 0), (-1, 0), (1, 0)]
 dir8 = [(-1, 0), (-1, 1), (0, 1), (1, 1), (1, 0), (1, -1), (0, -1), (-1, -1)]
@@ -42,3 +48,9 @@ move dirToCoord = foldr (flip (step dirToCoord))
 parseGrid :: (Char -> a) -> [String] -> Grid a
 parseGrid cellParser xs = M.map cellParser m
   where m = M.fromList [((row, col), b) | (row, line) <- zip [0 ..] xs, (col, b) <- zip [0 ..] line]
+
+rotate90Clockwise :: Coord -> Coord
+rotate90Clockwise (a, b) = (b, (-1) * a)
+
+rotate90CounterClockwise :: Coord -> Coord
+rotate90CounterClockwise (a, b) = ((-1) * b, a)
