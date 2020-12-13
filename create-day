@@ -28,5 +28,5 @@ solve2 :: [String] -> Int
 solve2 = solve1
 
 main :: IO()
-main = mainWrapper \"day${input}\" [solve1, solve2]" >> $FILE
+main = mainWrapper \"day${input}\" solve1 solve2" >> $FILE
 git add $FILE

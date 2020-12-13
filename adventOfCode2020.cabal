@@ -96,6 +96,20 @@ executable day12
     , split
   default-language: Haskell2010
 
+executable day13
+  main-is: Day13.hs
+  hs-source-dirs:
+      app
+  default-extensions: TypeApplications LambdaCase
+  ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      adventOfCode2020
+    , base >=4.7 && <5
+    , containers
+    , extra
+    , split
+  default-language: Haskell2010
+
 executable day2
   main-is: Day2.hs
   hs-source-dirs:
