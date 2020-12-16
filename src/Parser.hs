@@ -10,6 +10,7 @@ module Parser (
   stringLiteral,
   whiteSpace,
   letters,
+  splitBy,
   (<|>),
   many,
   some
