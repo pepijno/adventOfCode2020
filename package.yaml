@@ -23,6 +23,10 @@ dependencies:
 - split
 - containers
 - extra
+- vector
+- distributive
+- adjunctions
+- comonad
 
 library:
   source-dirs: src
@@ -39,6 +43,9 @@ _exe-defs: &exe-defaults
   - -with-rtsopts=-N
 
 executables:
+  day17:
+    main: Day17.hs
+    <<: *exe-defaults
   day16:
     main: Day16.hs
     <<: *exe-defaults

@@ -34,10 +34,14 @@ library
       src
   default-extensions: TypeApplications LambdaCase
   build-depends:
-      base >=4.7 && <5
+      adjunctions
+    , base >=4.7 && <5
+    , comonad
     , containers
+    , distributive
     , extra
     , split
+    , vector
   default-language: Haskell2010
 
 executable day1
@@ -47,11 +51,15 @@ executable day1
   default-extensions: TypeApplications LambdaCase
   ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      adventOfCode2020
+      adjunctions
+    , adventOfCode2020
     , base >=4.7 && <5
+    , comonad
     , containers
+    , distributive
     , extra
     , split
+    , vector
   default-language: Haskell2010
 
 executable day10
@@ -61,11 +69,15 @@ executable day10
   default-extensions: TypeApplications LambdaCase
   ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      adventOfCode2020
+      adjunctions
+    , adventOfCode2020
     , base >=4.7 && <5
+    , comonad
     , containers
+    , distributive
     , extra
     , split
+    , vector
   default-language: Haskell2010
 
 executable day11
@@ -75,11 +87,15 @@ executable day11
   default-extensions: TypeApplications LambdaCase
   ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      adventOfCode2020
+      adjunctions
+    , adventOfCode2020
     , base >=4.7 && <5
+    , comonad
     , containers
+    , distributive
     , extra
     , split
+    , vector
   default-language: Haskell2010
 
 executable day12
@@ -89,11 +105,15 @@ executable day12
   default-extensions: TypeApplications LambdaCase
   ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      adventOfCode2020
+      adjunctions
+    , adventOfCode2020
     , base >=4.7 && <5
+    , comonad
     , containers
+    , distributive
     , extra
     , split
+    , vector
   default-language: Haskell2010
 
 executable day13
@@ -103,11 +123,15 @@ executable day13
   default-extensions: TypeApplications LambdaCase
   ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      adventOfCode2020
+      adjunctions
+    , adventOfCode2020
     , base >=4.7 && <5
+    , comonad
     , containers
+    , distributive
     , extra
     , split
+    , vector
   default-language: Haskell2010
 
 executable day14
@@ -117,11 +141,15 @@ executable day14
   default-extensions: TypeApplications LambdaCase
   ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      adventOfCode2020
+      adjunctions
+    , adventOfCode2020
     , base >=4.7 && <5
+    , comonad
     , containers
+    , distributive
     , extra
     , split
+    , vector
   default-language: Haskell2010
 
 executable day15
@@ -131,11 +159,15 @@ executable day15
   default-extensions: TypeApplications LambdaCase
   ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      adventOfCode2020
+      adjunctions
+    , adventOfCode2020
     , base >=4.7 && <5
+    , comonad
     , containers
+    , distributive
     , extra
     , split
+    , vector
   default-language: Haskell2010
 
 executable day16
@@ -145,11 +177,33 @@ executable day16
   default-extensions: TypeApplications LambdaCase
   ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      adventOfCode2020
+      adjunctions
+    , adventOfCode2020
     , base >=4.7 && <5
+    , comonad
     , containers
+    , distributive
     , extra
     , split
+    , vector
+  default-language: Haskell2010
+
+executable day17
+  main-is: Day17.hs
+  hs-source-dirs:
+      app
+  default-extensions: TypeApplications LambdaCase
+  ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      adjunctions
+    , adventOfCode2020
+    , base >=4.7 && <5
+    , comonad
+    , containers
+    , distributive
+    , extra
+    , split
+    , vector
   default-language: Haskell2010
 
 executable day2
@@ -159,11 +213,15 @@ executable day2
   default-extensions: TypeApplications LambdaCase
   ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      adventOfCode2020
+      adjunctions
+    , adventOfCode2020
     , base >=4.7 && <5
+    , comonad
     , containers
+    , distributive
     , extra
     , split
+    , vector
   default-language: Haskell2010
 
 executable day3
@@ -173,11 +231,15 @@ executable day3
   default-extensions: TypeApplications LambdaCase
   ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      adventOfCode2020
+      adjunctions
+    , adventOfCode2020
     , base >=4.7 && <5
+    , comonad
     , containers
+    , distributive
     , extra
     , split
+    , vector
   default-language: Haskell2010
 
 executable day4
@@ -187,11 +249,15 @@ executable day4
   default-extensions: TypeApplications LambdaCase
   ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      adventOfCode2020
+      adjunctions
+    , adventOfCode2020
     , base >=4.7 && <5
+    , comonad
     , containers
+    , distributive
     , extra
     , split
+    , vector
   default-language: Haskell2010
 
 executable day5
@@ -201,11 +267,15 @@ executable day5
   default-extensions: TypeApplications LambdaCase
   ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      adventOfCode2020
+      adjunctions
+    , adventOfCode2020
     , base >=4.7 && <5
+    , comonad
     , containers
+    , distributive
     , extra
     , split
+    , vector
   default-language: Haskell2010
 
 executable day6
@@ -215,11 +285,15 @@ executable day6
   default-extensions: TypeApplications LambdaCase
   ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      adventOfCode2020
+      adjunctions
+    , adventOfCode2020
     , base >=4.7 && <5
+    , comonad
     , containers
+    , distributive
     , extra
     , split
+    , vector
   default-language: Haskell2010
 
 executable day7
@@ -229,11 +303,15 @@ executable day7
   default-extensions: TypeApplications LambdaCase
   ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      adventOfCode2020
+      adjunctions
+    , adventOfCode2020
     , base >=4.7 && <5
+    , comonad
     , containers
+    , distributive
     , extra
     , split
+    , vector
   default-language: Haskell2010
 
 executable day8
@@ -243,11 +321,15 @@ executable day8
   default-extensions: TypeApplications LambdaCase
   ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      adventOfCode2020
+      adjunctions
+    , adventOfCode2020
     , base >=4.7 && <5
+    , comonad
     , containers
+    , distributive
     , extra
     , split
+    , vector
   default-language: Haskell2010
 
 executable day9
@@ -257,11 +339,15 @@ executable day9
   default-extensions: TypeApplications LambdaCase
   ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      adventOfCode2020
+      adjunctions
+    , adventOfCode2020
     , base >=4.7 && <5
+    , comonad
     , containers
+    , distributive
     , extra
     , split
+    , vector
   default-language: Haskell2010
 
 test-suite adventOfCode2020-test
@@ -272,9 +358,13 @@ test-suite adventOfCode2020-test
   default-extensions: TypeApplications LambdaCase
   ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      adventOfCode2020
+      adjunctions
+    , adventOfCode2020
     , base >=4.7 && <5
+    , comonad
     , containers
+    , distributive
     , extra
     , split
+    , vector
   default-language: Haskell2010
