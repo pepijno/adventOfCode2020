@@ -7,22 +7,31 @@ import qualified Data.Map as M
 import qualified Data.Set as S
 
 parseName :: Parser String
-parseName = (++) <$> stringLiteral <*> (whiteSpace *> stringLiteral)
+parseName = do
+  str <- stringLiteral
+  whiteSpace
+  str' <- stringLiteral
+  return (str ++ str')
 
 parseChild :: Parser (Int, String)
-parseChild = (,) <$>
-  (integer <* whiteSpace) <*>
-  (parseName <* bags <* delimiter)
-    where bags = string " bags" <|> string " bag"
-          delimiter = char '.' <|> char ','
+parseChild = do
+  i <- integer
+  whiteSpace
+  name <- parseName
+  string " bags" <|> string " bag"
+  char '.' <|> char ','
+  return (i, name)
 
 parseChildren :: Parser [(Int, String)]
-parseChildren = noChildren <|> ((:) <$> parseChild <*> many (whiteSpace *> parseChild) <|> pure [])
+parseChildren = noChildren <|> (some (whiteSpace *> parseChild) <|> pure [])
   where noChildren = pure [] <* string "no other bags."
 
 parseInput :: Parser (String, [(Int, String)])
-parseInput = (,) <$> (parseName <* sep) <*> parseChildren
-  where sep = string " bags contain "
+parseInput = do
+  name <- parseName
+  string " bags contain "
+  children <- parseChildren
+  return (name, children)
 
 parseAll :: [String] -> [(String, [(Int, String)])]
 parseAll = map fst . fromJust . sequenceA . map (parse parseInput)

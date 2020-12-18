@@ -9,7 +9,12 @@ import qualified Data.Set as S
 data Instruction = Mask (Integer, Integer, S.Set Int) | WriteMem Integer Integer deriving (Show)
 
 parseWrite :: Parser Instruction
-parseWrite = WriteMem <$> (string "mem[" *> (fromIntegral <$> natural) <* string "] = ") <*> (fromIntegral <$> natural)
+parseWrite = do
+  string "mem["
+  addr <- fromIntegral <$> natural
+  string "] = "
+  val <- fromIntegral <$> natural
+  return $ WriteMem addr val
 
 parseMask :: Parser Instruction
 parseMask = string "mask = " *> (stringToMask <$> stringLiteral)

@@ -26,7 +26,7 @@ isValid KeyValue{key=k, value=v} = case k of
                _ -> True
 
 parsePair :: Parser KeyValue
-parsePair = KeyValue <$> (letters <* char ':') <*> stringLiteral
+parsePair = KeyValue <$> letters <* char ':' <*> stringLiteral
 
 grouping :: [String] -> [[String]]
 grouping = map (concat . map words) . groupPairs

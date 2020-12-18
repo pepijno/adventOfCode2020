@@ -13,7 +13,15 @@ data Line = Line {
 } deriving (Show)
 
 parseLine :: Parser Line
-parseLine = Line <$> natural <* char '-' <*> natural <* whiteSpace <*> anyChar <* string ": " <*> stringLiteral
+parseLine = do
+  min' <- natural
+  char '-'
+  max' <- natural
+  whiteSpace
+  c <- anyChar
+  string ": "
+  str <- stringLiteral
+  return $ Line min' max' c str
 
 checkPassword1 :: Line -> Bool
 checkPassword1 l = inRange c (mini l) (maxi l)

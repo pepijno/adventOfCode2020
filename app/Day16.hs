@@ -15,12 +15,17 @@ data Condition = Condition
   } deriving (Show, Eq)
 
 parseCondition :: Parser Condition
-parseCondition = Condition <$>
-  (splitBy (/=':') <* string ": ") <*>
-    (natural <* char '-') <*>
-      (natural <* string " or ") <*>
-        (natural <* char '-') <*>
-          natural
+parseCondition = do
+  n <- splitBy (/=':')
+  string ": "
+  min1' <- natural
+  char '-'
+  max1' <- natural
+  string " or "
+  min2' <- natural
+  char '-'
+  max2' <- natural
+  return $ Condition n min1' max1' min2' max2'
 
 isValid :: Int -> Condition -> Bool
 isValid i c = (inRange i (min1 c) (max1 c)) || (inRange i (min2 c) (max2 c))

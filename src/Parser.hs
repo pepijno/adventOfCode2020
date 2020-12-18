@@ -38,6 +38,12 @@ instance Alternative Parser where
   empty = Parser $ const Nothing
   (Parser a) <|> (Parser b) = Parser $ \input -> (a input) <|> (b input)
 
+instance Monad Parser where
+  (Parser a) >>= f = Parser $ \input -> do
+    (x, rest) <- a input
+    (x', rest') <- parse (f x) rest
+    Just (x', rest')
+
 unsafeParse :: Parser a -> String -> a
 unsafeParse p = fst . fromJust . parse p
 
