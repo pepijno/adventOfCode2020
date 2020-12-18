@@ -59,11 +59,16 @@ string = sequenceA . map char
 splitBy :: (Char -> Bool) -> Parser String
 splitBy f = Parser $ \input -> Just $ span f input
 
+notNull :: Parser [a] -> Parser [a]
+notNull (Parser p) = Parser $ \input -> do
+  (input', rest) <- p input
+  if null input' then Nothing else Just (input', rest)
+
 natural :: Parser Int
-natural = read <$> splitBy isDigit
+natural = read <$> notNull (splitBy isDigit)
 
 integer :: Parser Int
-integer = read <$> splitBy (\x -> isDigit x || x == '-')
+integer = read <$> notNull (splitBy (\x -> isDigit x || x == '-'))
 
 whiteSpace :: Parser String
 whiteSpace = splitBy isSpace

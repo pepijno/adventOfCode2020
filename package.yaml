@@ -43,6 +43,9 @@ _exe-defs: &exe-defaults
   - -with-rtsopts=-N
 
 executables:
+  day18:
+    main: Day18.hs
+    <<: *exe-defaults
   day17:
     main: Day17.hs
     <<: *exe-defaults
@@ -104,3 +107,4 @@ tests:
 default-extensions:
   - TypeApplications
   - LambdaCase
+  - BangPatterns

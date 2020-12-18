@@ -32,7 +32,7 @@ library
       Paths_adventOfCode2020
   hs-source-dirs:
       src
-  default-extensions: TypeApplications LambdaCase
+  default-extensions: TypeApplications LambdaCase BangPatterns
   build-depends:
       adjunctions
     , base >=4.7 && <5
@@ -48,7 +48,7 @@ executable day1
   main-is: Day1.hs
   hs-source-dirs:
       app
-  default-extensions: TypeApplications LambdaCase
+  default-extensions: TypeApplications LambdaCase BangPatterns
   ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       adjunctions
@@ -66,7 +66,7 @@ executable day10
   main-is: Day10.hs
   hs-source-dirs:
       app
-  default-extensions: TypeApplications LambdaCase
+  default-extensions: TypeApplications LambdaCase BangPatterns
   ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       adjunctions
@@ -84,7 +84,7 @@ executable day11
   main-is: Day11.hs
   hs-source-dirs:
       app
-  default-extensions: TypeApplications LambdaCase
+  default-extensions: TypeApplications LambdaCase BangPatterns
   ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       adjunctions
@@ -102,7 +102,7 @@ executable day12
   main-is: Day12.hs
   hs-source-dirs:
       app
-  default-extensions: TypeApplications LambdaCase
+  default-extensions: TypeApplications LambdaCase BangPatterns
   ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       adjunctions
@@ -120,7 +120,7 @@ executable day13
   main-is: Day13.hs
   hs-source-dirs:
       app
-  default-extensions: TypeApplications LambdaCase
+  default-extensions: TypeApplications LambdaCase BangPatterns
   ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       adjunctions
@@ -138,7 +138,7 @@ executable day14
   main-is: Day14.hs
   hs-source-dirs:
       app
-  default-extensions: TypeApplications LambdaCase
+  default-extensions: TypeApplications LambdaCase BangPatterns
   ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       adjunctions
@@ -156,7 +156,7 @@ executable day15
   main-is: Day15.hs
   hs-source-dirs:
       app
-  default-extensions: TypeApplications LambdaCase
+  default-extensions: TypeApplications LambdaCase BangPatterns
   ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       adjunctions
@@ -174,7 +174,7 @@ executable day16
   main-is: Day16.hs
   hs-source-dirs:
       app
-  default-extensions: TypeApplications LambdaCase
+  default-extensions: TypeApplications LambdaCase BangPatterns
   ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       adjunctions
@@ -192,7 +192,25 @@ executable day17
   main-is: Day17.hs
   hs-source-dirs:
       app
-  default-extensions: TypeApplications LambdaCase
+  default-extensions: TypeApplications LambdaCase BangPatterns
+  ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      adjunctions
+    , adventOfCode2020
+    , base >=4.7 && <5
+    , comonad
+    , containers
+    , distributive
+    , extra
+    , split
+    , vector
+  default-language: Haskell2010
+
+executable day18
+  main-is: Day18.hs
+  hs-source-dirs:
+      app
+  default-extensions: TypeApplications LambdaCase BangPatterns
   ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       adjunctions
@@ -210,7 +228,7 @@ executable day2
   main-is: Day2.hs
   hs-source-dirs:
       app
-  default-extensions: TypeApplications LambdaCase
+  default-extensions: TypeApplications LambdaCase BangPatterns
   ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       adjunctions
@@ -228,7 +246,7 @@ executable day3
   main-is: Day3.hs
   hs-source-dirs:
       app
-  default-extensions: TypeApplications LambdaCase
+  default-extensions: TypeApplications LambdaCase BangPatterns
   ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       adjunctions
@@ -246,7 +264,7 @@ executable day4
   main-is: Day4.hs
   hs-source-dirs:
       app
-  default-extensions: TypeApplications LambdaCase
+  default-extensions: TypeApplications LambdaCase BangPatterns
   ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       adjunctions
@@ -264,7 +282,7 @@ executable day5
   main-is: Day5.hs
   hs-source-dirs:
       app
-  default-extensions: TypeApplications LambdaCase
+  default-extensions: TypeApplications LambdaCase BangPatterns
   ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       adjunctions
@@ -282,7 +300,7 @@ executable day6
   main-is: Day6.hs
   hs-source-dirs:
       app
-  default-extensions: TypeApplications LambdaCase
+  default-extensions: TypeApplications LambdaCase BangPatterns
   ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       adjunctions
@@ -300,7 +318,7 @@ executable day7
   main-is: Day7.hs
   hs-source-dirs:
       app
-  default-extensions: TypeApplications LambdaCase
+  default-extensions: TypeApplications LambdaCase BangPatterns
   ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       adjunctions
@@ -318,7 +336,7 @@ executable day8
   main-is: Day8.hs
   hs-source-dirs:
       app
-  default-extensions: TypeApplications LambdaCase
+  default-extensions: TypeApplications LambdaCase BangPatterns
   ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       adjunctions
@@ -336,7 +354,7 @@ executable day9
   main-is: Day9.hs
   hs-source-dirs:
       app
-  default-extensions: TypeApplications LambdaCase
+  default-extensions: TypeApplications LambdaCase BangPatterns
   ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       adjunctions
@@ -355,7 +373,7 @@ test-suite adventOfCode2020-test
   main-is: Spec.hs
   hs-source-dirs:
       test
-  default-extensions: TypeApplications LambdaCase
+  default-extensions: TypeApplications LambdaCase BangPatterns
   ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       adjunctions
