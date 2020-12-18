@@ -27,6 +27,7 @@ dependencies:
 - distributive
 - adjunctions
 - comonad
+- hashable
 
 library:
   source-dirs: src
@@ -107,4 +108,3 @@ tests:
 default-extensions:
   - TypeApplications
   - LambdaCase
-  - BangPatterns

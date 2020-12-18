@@ -4,10 +4,8 @@ import Lib
 import Data.List
 
 parseBinary :: [Char] -> Int -> String -> Int
-parseBinary chars n [] = n
-parseBinary chars n (x:xs)
-  | x `elem` chars = parseBinary chars (2 * n + 1) xs
-  | otherwise      = parseBinary chars (2 * n) xs
+parseBinary chars n = foldl (\x y -> x * 2 + y) 0 . map one
+  where one x = if x `elem` chars then 1 else 0
 
 parseID :: String -> Int
 parseID = parseBinary "BR" 0

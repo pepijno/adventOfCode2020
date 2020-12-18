@@ -11,22 +11,26 @@ preamble = 25
 possibleSums :: [Int] -> [Int]
 possibleSums xs = [ x + y | (x:ys) <- tails xs, y <- ys ]
 
-findNotIsSum :: [Int] -> Maybe Int
-findNotIsSum l@(x:xs)
-  | length l <= preamble = Nothing
-  | t `elem` (possibleSums tt) = findNotIsSum xs
-  | otherwise = Just t
-  where tt = take (preamble + 1) l
-        t = last tt
+findNotIsSum :: [Int] -> [Int] -> Int
+findNotIsSum l@(x:xs) (y:ys) = if t y l then findNotIsSum (xs ++ [y]) ys else y
+  where t y (z:zs) = y - z `elem` zs || t y zs
+        t _ [] = False
+
+solveFind :: [Int] -> Int
+solveFind xs = findNotIsSum (take preamble xs) (drop preamble xs)
 
 solve1 :: [String] -> Int
-solve1 = fromJust . findNotIsSum . map read
+solve1 = solveFind . map read
 
 subs :: [Int] -> [[Int]]
-subs = filter (not . null) . concat . map tails . inits
+subs = concatMap tails . inits
+
+solveFind' :: [Int] -> [Int]
+solveFind' xs = let n = solveFind xs
+                 in (head . filter ((==n) . sum) . subs) xs
 
 solve2 :: [String] -> Int
-solve2 = sum . (<*>) [minimum, maximum] . init . filter ((==) 57195069 . sum) . subs . map read
+solve2 = sum . (<*>) [minimum, maximum] . (:[]) . solveFind' . map read
 
 main :: IO()
 main = mainWrapper "day9" solve1 solve2

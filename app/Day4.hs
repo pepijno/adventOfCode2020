@@ -4,16 +4,12 @@ import Lib
 import Parser
 import Data.Char
 import Data.List.Split
+import qualified Data.Map.Strict as M
 
-data KeyValue = KeyValue {
-  key :: String,
-  value :: String
-} deriving (Show, Eq)
+type Passport = M.Map String String
 
-type Passport = [KeyValue]
-
-isValid :: KeyValue -> Bool
-isValid KeyValue{key=k, value=v} = case k of
+isValid :: String -> String -> Bool
+isValid k v = case k of
                "byr" -> inRange (read v) 1920 2002
                "iyr" -> inRange (read v) 2010 2020
                "eyr" -> inRange (read v) 2020 2030
@@ -25,26 +21,23 @@ isValid KeyValue{key=k, value=v} = case k of
                "pid" -> (length v == 9) && (all isDigit v)
                _ -> True
 
-parsePair :: Parser KeyValue
-parsePair = KeyValue <$> letters <* char ':' <*> stringLiteral
+parsePair :: Parser (String, String)
+parsePair = (,) <$> letters <* char ':' <*> stringLiteral
 
 grouping :: [String] -> [[String]]
 grouping = map (concat . map words) . groupPairs
 
 parsePassport :: [String] -> Passport
-parsePassport = map (unsafeParse parsePair)
+parsePassport = M.fromList . map (unsafeParse parsePair)
 
 validPassport1 :: Passport -> Bool
-validPassport1 pp = (l == 8) || ((l == 7) && not ("cid" `elem` keys))
-  where
-    keys = map key pp
-    l = length keys
+validPassport1 = (==7) .  M.size . M.filterWithKey (\k _ -> k /= "cid")
 
 solve1 :: [String] -> Int
 solve1 = length . filter (validPassport1 . parsePassport) . grouping
 
 validPassport2 :: Passport -> Bool
-validPassport2 pp = validPassport1 pp && (all isValid pp)
+validPassport2 = (==7) .  M.size . M.filterWithKey (\k v -> k /= "cid" && isValid k v)
 
 solve2 :: [String] -> Int
 solve2 = length . filter (validPassport2 . parsePassport) . grouping

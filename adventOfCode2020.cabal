@@ -32,7 +32,7 @@ library
       Paths_adventOfCode2020
   hs-source-dirs:
       src
-  default-extensions: TypeApplications LambdaCase BangPatterns
+  default-extensions: TypeApplications LambdaCase
   build-depends:
       adjunctions
     , base >=4.7 && <5
@@ -40,6 +40,7 @@ library
     , containers
     , distributive
     , extra
+    , hashable
     , split
     , vector
   default-language: Haskell2010
@@ -48,7 +49,7 @@ executable day1
   main-is: Day1.hs
   hs-source-dirs:
       app
-  default-extensions: TypeApplications LambdaCase BangPatterns
+  default-extensions: TypeApplications LambdaCase
   ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       adjunctions
@@ -58,6 +59,7 @@ executable day1
     , containers
     , distributive
     , extra
+    , hashable
     , split
     , vector
   default-language: Haskell2010
@@ -66,7 +68,7 @@ executable day10
   main-is: Day10.hs
   hs-source-dirs:
       app
-  default-extensions: TypeApplications LambdaCase BangPatterns
+  default-extensions: TypeApplications LambdaCase
   ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       adjunctions
@@ -76,6 +78,7 @@ executable day10
     , containers
     , distributive
     , extra
+    , hashable
     , split
     , vector
   default-language: Haskell2010
@@ -84,7 +87,7 @@ executable day11
   main-is: Day11.hs
   hs-source-dirs:
       app
-  default-extensions: TypeApplications LambdaCase BangPatterns
+  default-extensions: TypeApplications LambdaCase
   ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       adjunctions
@@ -94,6 +97,7 @@ executable day11
     , containers
     , distributive
     , extra
+    , hashable
     , split
     , vector
   default-language: Haskell2010
@@ -102,7 +106,7 @@ executable day12
   main-is: Day12.hs
   hs-source-dirs:
       app
-  default-extensions: TypeApplications LambdaCase BangPatterns
+  default-extensions: TypeApplications LambdaCase
   ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       adjunctions
@@ -112,6 +116,7 @@ executable day12
     , containers
     , distributive
     , extra
+    , hashable
     , split
     , vector
   default-language: Haskell2010
@@ -120,7 +125,7 @@ executable day13
   main-is: Day13.hs
   hs-source-dirs:
       app
-  default-extensions: TypeApplications LambdaCase BangPatterns
+  default-extensions: TypeApplications LambdaCase
   ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       adjunctions
@@ -130,6 +135,7 @@ executable day13
     , containers
     , distributive
     , extra
+    , hashable
     , split
     , vector
   default-language: Haskell2010
@@ -138,7 +144,7 @@ executable day14
   main-is: Day14.hs
   hs-source-dirs:
       app
-  default-extensions: TypeApplications LambdaCase BangPatterns
+  default-extensions: TypeApplications LambdaCase
   ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       adjunctions
@@ -148,6 +154,7 @@ executable day14
     , containers
     , distributive
     , extra
+    , hashable
     , split
     , vector
   default-language: Haskell2010
@@ -156,7 +163,7 @@ executable day15
   main-is: Day15.hs
   hs-source-dirs:
       app
-  default-extensions: TypeApplications LambdaCase BangPatterns
+  default-extensions: TypeApplications LambdaCase
   ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       adjunctions
@@ -166,6 +173,7 @@ executable day15
     , containers
     , distributive
     , extra
+    , hashable
     , split
     , vector
   default-language: Haskell2010
@@ -174,7 +182,7 @@ executable day16
   main-is: Day16.hs
   hs-source-dirs:
       app
-  default-extensions: TypeApplications LambdaCase BangPatterns
+  default-extensions: TypeApplications LambdaCase
   ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       adjunctions
@@ -184,6 +192,7 @@ executable day16
     , containers
     , distributive
     , extra
+    , hashable
     , split
     , vector
   default-language: Haskell2010
@@ -192,7 +201,7 @@ executable day17
   main-is: Day17.hs
   hs-source-dirs:
       app
-  default-extensions: TypeApplications LambdaCase BangPatterns
+  default-extensions: TypeApplications LambdaCase
   ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       adjunctions
@@ -202,6 +211,7 @@ executable day17
     , containers
     , distributive
     , extra
+    , hashable
     , split
     , vector
   default-language: Haskell2010
@@ -210,7 +220,7 @@ executable day18
   main-is: Day18.hs
   hs-source-dirs:
       app
-  default-extensions: TypeApplications LambdaCase BangPatterns
+  default-extensions: TypeApplications LambdaCase
   ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       adjunctions
@@ -220,6 +230,7 @@ executable day18
     , containers
     , distributive
     , extra
+    , hashable
     , split
     , vector
   default-language: Haskell2010
@@ -228,7 +239,7 @@ executable day2
   main-is: Day2.hs
   hs-source-dirs:
       app
-  default-extensions: TypeApplications LambdaCase BangPatterns
+  default-extensions: TypeApplications LambdaCase
   ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       adjunctions
@@ -238,6 +249,7 @@ executable day2
     , containers
     , distributive
     , extra
+    , hashable
     , split
     , vector
   default-language: Haskell2010
@@ -246,7 +258,7 @@ executable day3
   main-is: Day3.hs
   hs-source-dirs:
       app
-  default-extensions: TypeApplications LambdaCase BangPatterns
+  default-extensions: TypeApplications LambdaCase
   ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       adjunctions
@@ -256,6 +268,7 @@ executable day3
     , containers
     , distributive
     , extra
+    , hashable
     , split
     , vector
   default-language: Haskell2010
@@ -264,7 +277,7 @@ executable day4
   main-is: Day4.hs
   hs-source-dirs:
       app
-  default-extensions: TypeApplications LambdaCase BangPatterns
+  default-extensions: TypeApplications LambdaCase
   ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       adjunctions
@@ -274,6 +287,7 @@ executable day4
     , containers
     , distributive
     , extra
+    , hashable
     , split
     , vector
   default-language: Haskell2010
@@ -282,7 +296,7 @@ executable day5
   main-is: Day5.hs
   hs-source-dirs:
       app
-  default-extensions: TypeApplications LambdaCase BangPatterns
+  default-extensions: TypeApplications LambdaCase
   ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       adjunctions
@@ -292,6 +306,7 @@ executable day5
     , containers
     , distributive
     , extra
+    , hashable
     , split
     , vector
   default-language: Haskell2010
@@ -300,7 +315,7 @@ executable day6
   main-is: Day6.hs
   hs-source-dirs:
       app
-  default-extensions: TypeApplications LambdaCase BangPatterns
+  default-extensions: TypeApplications LambdaCase
   ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       adjunctions
@@ -310,6 +325,7 @@ executable day6
     , containers
     , distributive
     , extra
+    , hashable
     , split
     , vector
   default-language: Haskell2010
@@ -318,7 +334,7 @@ executable day7
   main-is: Day7.hs
   hs-source-dirs:
       app
-  default-extensions: TypeApplications LambdaCase BangPatterns
+  default-extensions: TypeApplications LambdaCase
   ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       adjunctions
@@ -328,6 +344,7 @@ executable day7
     , containers
     , distributive
     , extra
+    , hashable
     , split
     , vector
   default-language: Haskell2010
@@ -336,7 +353,7 @@ executable day8
   main-is: Day8.hs
   hs-source-dirs:
       app
-  default-extensions: TypeApplications LambdaCase BangPatterns
+  default-extensions: TypeApplications LambdaCase
   ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       adjunctions
@@ -346,6 +363,7 @@ executable day8
     , containers
     , distributive
     , extra
+    , hashable
     , split
     , vector
   default-language: Haskell2010
@@ -354,7 +372,7 @@ executable day9
   main-is: Day9.hs
   hs-source-dirs:
       app
-  default-extensions: TypeApplications LambdaCase BangPatterns
+  default-extensions: TypeApplications LambdaCase
   ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       adjunctions
@@ -364,6 +382,7 @@ executable day9
     , containers
     , distributive
     , extra
+    , hashable
     , split
     , vector
   default-language: Haskell2010
@@ -373,7 +392,7 @@ test-suite adventOfCode2020-test
   main-is: Spec.hs
   hs-source-dirs:
       test
-  default-extensions: TypeApplications LambdaCase BangPatterns
+  default-extensions: TypeApplications LambdaCase
   ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       adjunctions
@@ -383,6 +402,7 @@ test-suite adventOfCode2020-test
     , containers
     , distributive
     , extra
+    , hashable
     , split
     , vector
   default-language: Haskell2010

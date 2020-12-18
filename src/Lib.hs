@@ -2,7 +2,8 @@ module Lib (
   mainWrapper,
   inRange,
   groupPairs,
-  rotate
+  rotate,
+  count
 ) where
 
 import Data.List.Split
@@ -18,6 +19,9 @@ inRange v min max = min <= v && v <= max
 
 groupPairs :: [String] -> [[String]]
 groupPairs = splitOn [""]
+
+count :: (Eq a) => a -> [a] -> Int
+count x = length . filter (==x)
 
 rotate :: Int -> [a] -> [a]
 rotate n xs = take len . drop (n `mod` len) . cycle $ xs
