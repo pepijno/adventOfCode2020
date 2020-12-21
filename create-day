@@ -17,7 +17,7 @@ package_input="\ \ day${input}:\n    main: Day${input}.hs\n    \<\<: \*exe-defau
 
 sed -i "/^executables:/a $package_input" package.yaml
 
-target_input="inputs/${input}.txt"
+target_input="inputs/day${input}.txt"
 url="https://adventofcode.com/2020/day/${input}/input"
 curl -o $target_input -b "$AOC_COOKIE" $url
 git add $target_input

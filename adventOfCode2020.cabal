@@ -1,6 +1,6 @@
 cabal-version: 1.12
 
--- This file has been generated from package.yaml by hpack version 0.34.2.
+-- This file has been generated from package.yaml by hpack version 0.34.3.
 --
 -- see: https://github.com/sol/hpack
 
@@ -41,6 +41,7 @@ library
     , distributive
     , extra
     , hashable
+    , parsec
     , split
     , vector
   default-language: Haskell2010
@@ -60,6 +61,7 @@ executable day1
     , distributive
     , extra
     , hashable
+    , parsec
     , split
     , vector
   default-language: Haskell2010
@@ -79,6 +81,7 @@ executable day10
     , distributive
     , extra
     , hashable
+    , parsec
     , split
     , vector
   default-language: Haskell2010
@@ -98,6 +101,7 @@ executable day11
     , distributive
     , extra
     , hashable
+    , parsec
     , split
     , vector
   default-language: Haskell2010
@@ -117,6 +121,7 @@ executable day12
     , distributive
     , extra
     , hashable
+    , parsec
     , split
     , vector
   default-language: Haskell2010
@@ -136,6 +141,7 @@ executable day13
     , distributive
     , extra
     , hashable
+    , parsec
     , split
     , vector
   default-language: Haskell2010
@@ -155,6 +161,7 @@ executable day14
     , distributive
     , extra
     , hashable
+    , parsec
     , split
     , vector
   default-language: Haskell2010
@@ -174,6 +181,7 @@ executable day15
     , distributive
     , extra
     , hashable
+    , parsec
     , split
     , vector
   default-language: Haskell2010
@@ -193,6 +201,7 @@ executable day16
     , distributive
     , extra
     , hashable
+    , parsec
     , split
     , vector
   default-language: Haskell2010
@@ -212,6 +221,7 @@ executable day17
     , distributive
     , extra
     , hashable
+    , parsec
     , split
     , vector
   default-language: Haskell2010
@@ -231,6 +241,27 @@ executable day18
     , distributive
     , extra
     , hashable
+    , parsec
+    , split
+    , vector
+  default-language: Haskell2010
+
+executable day19
+  main-is: Day19.hs
+  hs-source-dirs:
+      app
+  default-extensions: TypeApplications LambdaCase
+  ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      adjunctions
+    , adventOfCode2020
+    , base >=4.7 && <5
+    , comonad
+    , containers
+    , distributive
+    , extra
+    , hashable
+    , parsec
     , split
     , vector
   default-language: Haskell2010
@@ -250,6 +281,47 @@ executable day2
     , distributive
     , extra
     , hashable
+    , parsec
+    , split
+    , vector
+  default-language: Haskell2010
+
+executable day20
+  main-is: Day20.hs
+  hs-source-dirs:
+      app
+  default-extensions: TypeApplications LambdaCase
+  ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      adjunctions
+    , adventOfCode2020
+    , base >=4.7 && <5
+    , comonad
+    , containers
+    , distributive
+    , extra
+    , hashable
+    , parsec
+    , split
+    , vector
+  default-language: Haskell2010
+
+executable day21
+  main-is: Day21.hs
+  hs-source-dirs:
+      app
+  default-extensions: TypeApplications LambdaCase
+  ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      adjunctions
+    , adventOfCode2020
+    , base >=4.7 && <5
+    , comonad
+    , containers
+    , distributive
+    , extra
+    , hashable
+    , parsec
     , split
     , vector
   default-language: Haskell2010
@@ -269,6 +341,7 @@ executable day3
     , distributive
     , extra
     , hashable
+    , parsec
     , split
     , vector
   default-language: Haskell2010
@@ -288,6 +361,7 @@ executable day4
     , distributive
     , extra
     , hashable
+    , parsec
     , split
     , vector
   default-language: Haskell2010
@@ -307,6 +381,7 @@ executable day5
     , distributive
     , extra
     , hashable
+    , parsec
     , split
     , vector
   default-language: Haskell2010
@@ -326,6 +401,7 @@ executable day6
     , distributive
     , extra
     , hashable
+    , parsec
     , split
     , vector
   default-language: Haskell2010
@@ -345,6 +421,7 @@ executable day7
     , distributive
     , extra
     , hashable
+    , parsec
     , split
     , vector
   default-language: Haskell2010
@@ -364,6 +441,7 @@ executable day8
     , distributive
     , extra
     , hashable
+    , parsec
     , split
     , vector
   default-language: Haskell2010
@@ -383,6 +461,7 @@ executable day9
     , distributive
     , extra
     , hashable
+    , parsec
     , split
     , vector
   default-language: Haskell2010
@@ -403,6 +482,7 @@ test-suite adventOfCode2020-test
     , distributive
     , extra
     , hashable
+    , parsec
     , split
     , vector
   default-language: Haskell2010

@@ -3,9 +3,12 @@ module Lib (
   inRange,
   groupPairs,
   rotate,
-  count
+  count,
+  mapFst,
+  mapSnd
 ) where
 
+import Control.Arrow
 import Data.List.Split
 
 mainWrapper :: (Show a, Show b) => String -> ([String] -> a) -> ([String] -> b) -> IO()
@@ -26,3 +29,9 @@ count x = length . filter (==x)
 rotate :: Int -> [a] -> [a]
 rotate n xs = take len . drop (n `mod` len) . cycle $ xs
     where len = length xs
+
+mapFst :: (a -> c) -> [(a, b)] -> [(c, b)]
+mapFst f = map (f . fst &&& snd)
+
+mapSnd :: (b -> c) -> [(a, b)] -> [(a, c)]
+mapSnd f = map (fst &&& f . snd)

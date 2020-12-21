@@ -28,6 +28,7 @@ dependencies:
 - adjunctions
 - comonad
 - hashable
+- parsec
 
 library:
   source-dirs: src
@@ -44,6 +45,15 @@ _exe-defs: &exe-defaults
   - -with-rtsopts=-N
 
 executables:
+  day21:
+    main: Day21.hs
+    <<: *exe-defaults
+  day20:
+    main: Day20.hs
+    <<: *exe-defaults
+  day19:
+    main: Day19.hs
+    <<: *exe-defaults
   day18:
     main: Day18.hs
     <<: *exe-defaults
