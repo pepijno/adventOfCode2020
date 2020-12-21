@@ -17,7 +17,8 @@ data Condition = Condition
 
 parseCondition :: Parser Condition
 parseCondition = do
-  n <- manyUntil anyChar (string ": ")
+  n <- munch1 (/= ':')
+  string ": "
   min1' <- natural
   char '-'
   max1' <- natural

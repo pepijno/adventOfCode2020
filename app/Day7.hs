@@ -7,29 +7,29 @@ import Parser
 
 type Bag = (String, [(Int, String)])
 
-parseName :: Parser String
-parseName = (++) <$> manyUntil anyChar whiteSpace <*> manyUntil anyChar whiteSpace
+parseBag :: Parser String
+parseBag = do
+  a <- stringLiteral
+  char ' '
+  b <- stringLiteral
+  string " bag"
+  optional $ char 's'
+  return $ a ++ b
 
 parseChild :: Parser (Int, String)
 parseChild = do
-  i <- integer
-  whiteSpace
-  name <- parseName
-  string "bags" <| string "bag"
-  string "." <| string ","
-  return (i, name)
-
-parseChildren :: Parser [(Int, String)]
-parseChildren = noChildren <| sepBy (char ' ') parseChild
-  where
-    noChildren = pure [] <* string "no other bags."
+  n <- integer
+  char ' '
+  bag <- parseBag
+  return (n, bag)
 
 parseInput :: Parser Bag
 parseInput = do
-  name <- parseName
-  string "bags contain "
-  children <- parseChildren
-  return (name, children)
+  bag <- parseBag
+  string " contain "
+  children <- (string "no other bags" >> pure []) <| sepBy (string ", ") parseChild
+  char '.'
+  return (bag, children)
 
 parseAll :: [String] -> [Bag]
 parseAll = map (unsafeParse parseInput)

@@ -17,7 +17,7 @@ parseLine :: Parser Line
 parseLine = do
   (min', max') <- (,) <$> natural <* char '-' <*> natural
   whiteSpace
-  (c, str) <- (,) <$> anyChar <* string ": " <*> manyUntil anyChar eof
+  (c, str) <- (,) <$> anyChar <* string ": " <*> stringLiteral
   return $ Line min' max' c str
 
 checkPassword1 :: Line -> Bool

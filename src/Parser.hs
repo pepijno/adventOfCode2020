@@ -8,6 +8,7 @@ module Parser
     char,
     anyChar,
     string,
+    stringLiteral,
     integer,
     natural,
     whiteSpace,
@@ -219,6 +220,9 @@ anyChar = get
 
 letters :: Parser String
 letters = munch1 isAlpha
+
+stringLiteral :: Parser String
+stringLiteral = munch1 isAlphaNum
 
 eof :: Parser ()
 eof = do

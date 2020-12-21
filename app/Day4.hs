@@ -23,7 +23,7 @@ isValid k v = case k of
   _ -> True
 
 parsePair :: Parser (String, String)
-parsePair = (,) <$> letters <* char ':' <*> manyUntil anyChar eof
+parsePair = (,) <$> letters <* char ':' <*> many1 anyChar
 
 grouping :: [String] -> [[String]]
 grouping = map (concat . map words) . groupPairs

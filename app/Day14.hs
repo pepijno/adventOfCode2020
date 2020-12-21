@@ -17,7 +17,7 @@ parseWrite = do
   return $ WriteMem addr val
 
 parseMask :: Parser Instruction
-parseMask = string "mask = " *> (stringToMask <$> manyUntil anyChar eof)
+parseMask = string "mask = " *> (stringToMask <$> stringLiteral)
 
 parseInstruction :: Parser Instruction
 parseInstruction = parseWrite <|> parseMask
