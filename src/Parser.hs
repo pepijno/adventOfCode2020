@@ -47,8 +47,8 @@ instance Applicative P where
   (<*>) = ap
 
 instance Monad P where
-  (Get f) >>= g = Get $ \h -> f h >>= g
-  (Look f) >>= g = Look $ \h -> f h >>= g
+  (Get f) >>= g = Get (f >=> g)
+  (Look f) >>= g = Look (f >=> g)
   Fail >>= _ = Fail
   (Result a p) >>= g = g a <|> (p >>= g)
   (Final r) >>= g = final [ys' | (x, s) <- r, ys' <- run (g x) s]
@@ -102,7 +102,7 @@ look :: Parser String
 look = Parser Look
 
 pfail :: Parser a
-pfail = Parser $ \_ -> Fail
+pfail = Parser $ const Fail
 
 run :: P a -> String -> [(a, String)]
 run (Get f) (c : cs) = run (f c) cs
@@ -121,7 +121,7 @@ parse (Parser p) = run (p return)
   where
     probe (Get f) (c : cs) n = probe (f c) cs (n + 1)
     probe (Look f) s n = probe (f s) s n
-    probe p@(Result _ _) _ n = discard n >> (Parser (p >>=))
+    probe p@(Result _ _) _ n = discard n >> Parser (p >>=)
     probe (Final r) _ _ = Parser (Final r >>=)
     probe _ _ _ = Parser q
     discard 0 = return ()
@@ -129,7 +129,7 @@ parse (Parser p) = run (p return)
 
 unsafeParse :: Parser a -> String -> a
 unsafeParse p s
-  | length parsed == 0 = error ("Cannot parse: \"" ++ s ++ "\".")
+  | null parsed = error ("Cannot parse: \"" ++ s ++ "\".")
   | otherwise = fst $ last parsed
   where
     parsed = parse p s
@@ -169,7 +169,7 @@ between open close p = do
   return x
 
 optional :: Parser a -> Parser ()
-optional p = (p >> return ()) <|> return ()
+optional p = void p <|> return ()
 
 withDefault :: a -> Parser a -> Parser a
 withDefault d p = p <|> return d
@@ -189,7 +189,7 @@ sepBy1 sep p = liftM2 (:) p (many (sep >> p))
 manyUntil :: Parser a -> Parser b -> Parser [a]
 manyUntil p end = scan
   where
-    scan = (end >> return []) <| (liftM2 (:) p scan)
+    scan = (end >> return []) <| liftM2 (:) p scan
 
 char :: Char -> Parser Char
 char c = satisfy (== c)
@@ -227,4 +227,4 @@ stringLiteral = munch1 isAlphaNum
 eof :: Parser ()
 eof = do
   s <- look
-  if null s then return () else pfail
+  unless (null s) pfail

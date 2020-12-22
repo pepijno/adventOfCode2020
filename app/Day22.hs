@@ -9,7 +9,7 @@ parseDecks = map (map read . tail) . groupPairs
 playGame :: ([Int], [Int]) -> [Int]
 playGame ([], a) = a
 playGame (a, []) = a
-playGame ((x : xs), (y : ys))
+playGame (x : xs, y : ys)
   | x > y = playGame (xs ++ [x, y], ys)
   | otherwise = playGame (xs, ys ++ [y, x])
 
@@ -26,8 +26,8 @@ playGame' a@(_, ([], _)) = a
 playGame' a@(_, (_, [])) = a
 playGame' (s, (l@(x : xs), m@(y : ys)))
   | S.member (l, m) s = (s, (l, []))
-  | x <= (length xs) && y <= (length ys) =
-    let (_, (_, ys')) = playGame' (S.empty, ((take x xs), (take y ys)))
+  | x <= length xs && y <= length ys =
+    let (_, (_, ys')) = playGame' (S.empty, (take x xs, take y ys))
      in if null ys'
           then playGame' (s', (xs ++ [x, y], ys))
           else playGame' (s', (xs, ys ++ [y, x]))

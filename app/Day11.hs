@@ -36,7 +36,7 @@ step :: (Spot -> Bool) -> Int -> V.Vector (V.Vector Spot) -> V.Vector (V.Vector 
 step f n = mapOverGrid f (updateSpot n)
 
 countGrid :: (a -> Bool) -> V.Vector (V.Vector a) -> Int
-countGrid f = sum . map (count f) . map V.toList . V.toList
+countGrid f = sum . map (count f . V.toList) . V.toList
 
 solve1 :: [String] -> Int
 solve1 = countGrid (== Filled) . converge (step (const False) 4) . parseGrid

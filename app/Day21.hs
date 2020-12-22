@@ -27,7 +27,7 @@ deleteEl deleted xs = [x | x <- xs, x /= deleted]
 getAlgs :: [(String, [String])] -> [(String, String)]
 getAlgs [] = []
 getAlgs [(x, xs)] = map (const x &&& id) xs
-getAlgs xs = (alg, algNative) : (getAlgs noFs)
+getAlgs xs = (alg, algNative) : getAlgs noFs
   where
     algNative = head $ snd fs
     alg = fst fs
@@ -39,16 +39,16 @@ deleteAll [] ys = ys
 deleteAll (x : xs) ys = deleteAll xs $ filter (/= x) ys
 
 solve1 :: [String] -> Int
-solve1 xs = length . concat $ map (deleteAll algs . unsafeParse parseIngs) xs
+solve1 xs = length (concatMap (deleteAll algs . unsafeParse parseIngs) xs)
   where
     parsed = parseAll xs
-    algs = map snd $ getAlgs $ mapSnd (foldl1 intersect) $ parsed
+    algs = map snd $ getAlgs $ mapSnd (foldl1 intersect) parsed
 
 solve2 :: [String] -> String
 solve2 xs = combine $ sortBy (compare `on` fst) algs
   where
     parsed = parseAll xs
-    algs = getAlgs $ mapSnd (foldl1 intersect) $ parsed
+    algs = getAlgs $ mapSnd (foldl1 intersect) parsed
     combine = foldl1 (\x z -> x ++ "," ++ z) . map snd
 
 main :: IO ()

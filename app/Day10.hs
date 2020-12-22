@@ -10,7 +10,7 @@ diffs xs = zipWith (-) (tail sorted) sorted
     sorted = sort withBeginEnd
 
 countDiffs :: [Int] -> Int
-countDiffs xs = (filteredLength (== 1)) * (filteredLength (== 3))
+countDiffs xs = filteredLength (== 1) * filteredLength (== 3)
   where
     filteredLength f = count f . diffs $ xs
 

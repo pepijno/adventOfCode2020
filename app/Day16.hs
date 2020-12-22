@@ -29,10 +29,10 @@ parseCondition = do
   return $ Condition n min1' max1' min2' max2'
 
 isValid :: Int -> Condition -> Bool
-isValid i c = (inRange i (min1 c) (max1 c)) || (inRange i (min2 c) (max2 c))
+isValid i c = inRange i (min1 c) (max1 c) || inRange i (min2 c) (max2 c)
 
 sumOfNotValid :: [Condition] -> [Int] -> Int
-sumOfNotValid cs = sum . filter (\x -> all (not . isValid x) cs)
+sumOfNotValid cs = sum . filter (\x -> not (any (isValid x) cs))
 
 parseInput :: [String] -> ([Condition], [Int], [[Int]])
 parseInput xs =
@@ -49,14 +49,15 @@ solve1 xs = (sum . map (sumOfNotValid cs)) ts
     (cs, _, ts) = parseInput xs
 
 allValid :: [Int] -> Condition -> Bool
-allValid xs c = all (\x -> isValid x c) xs
+allValid xs c = all (`isValid` c) xs
 
 repeatFilter :: [[Condition]] -> [(Int, Condition)] -> [(Int, Condition)]
 repeatFilter is kps =
   ( ( head . map (\(a, b) -> (a, head b))
         . filter ((== 1) . length . snd)
         . zip [0 ..]
-        . map (filter (not . flip elem vs))
+        . map
+          (filter (not . flip elem vs))
     )
       is
   ) :
@@ -71,7 +72,7 @@ isDepartureCondition :: Condition -> Bool
 isDepartureCondition = isPrefixOf "departure" . name
 
 solve2 :: [String] -> Int
-solve2 xs = (product . map (\x -> my !! x) . map fst . filter (isDepartureCondition . snd) . last . take 21 . iterate (repeatFilter vcs)) []
+solve2 xs = (product . map ((my !!) . fst) . filter (isDepartureCondition . snd) . last . take 21 . iterate (repeatFilter vcs)) []
   where
     (cs, my, ts) = parseInput xs
     ts' = (transpose . filter ((== 0) . sumOfNotValid cs)) ts

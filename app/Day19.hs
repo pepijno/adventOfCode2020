@@ -31,7 +31,7 @@ ruleToParser :: M.Map Int Rule -> Int -> Parser ()
 ruleToParser m i = case m M.! i of
   Singleton c -> void $ char c
   Rule (xs, []) -> mapM_ (ruleToParser m) xs
-  Rule (xs, ys) -> (mapM_ (ruleToParser m) xs) <|> (mapM_ (ruleToParser m) ys)
+  Rule (xs, ys) -> mapM_ (ruleToParser m) xs <|> mapM_ (ruleToParser m) ys
 
 solve1 :: [String] -> Int
 solve1 xs = count ((== 1) . count ((== "") . snd)) $ map (parse parser) lines
@@ -44,7 +44,7 @@ solve2 xs = length . filter ((== 1) . length . filter ((== "") . snd)) $ map (pa
   where
     m = parseAll $ head $ groupPairs xs
     m' = M.insert 8 (Rule ([42], [42, 8])) $ M.insert 11 (Rule ([42, 31], [42, 11, 31])) m
-    parser = flip ruleToParser 0 m'
+    parser = ruleToParser m' 0
     lines = last $ groupPairs xs
 
 main :: IO ()

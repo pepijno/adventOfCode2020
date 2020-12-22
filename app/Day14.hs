@@ -34,7 +34,7 @@ stringToMask :: String -> Instruction
 stringToMask = Mask <$> parseBinary (0, 0, S.empty) 35
 
 applyMask :: (Integer, Integer) -> Integer -> Integer
-applyMask (x, y) a = (a .|. x) .&. (complement y)
+applyMask (x, y) a = (a .|. x) .&. complement y
 
 doInstruction :: ((Integer, Integer), M.Map Integer Integer) -> Instruction -> ((Integer, Integer), M.Map Integer Integer)
 doInstruction (_, m) (Mask (a, b, _)) = ((a, b), m)
@@ -53,7 +53,7 @@ doInstruction2 (_, m) (Mask (a, _, s)) = ((a, b', s'), m)
 doInstruction2 (a@(x, y, s), m) (WriteMem mem i) = (a, foldl (\m' addr -> M.insert addr i m') m addrs)
   where
     mem' = applyMask (x, y) mem
-    addrs = map ((.|.) mem') $ S.toList s
+    addrs = map (mem' .|.) $ S.toList s
 
 solve2 :: [String] -> Integer
 solve2 = sum . map snd . M.toList . snd . foldl doInstruction2 ((0, 0, S.empty), M.empty) . map (unsafeParse parseInstruction)

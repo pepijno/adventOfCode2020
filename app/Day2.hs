@@ -31,8 +31,8 @@ solve1 = count (checkPassword1 . unsafeParse parseLine)
 checkPassword2 :: Line -> Bool
 checkPassword2 l = (f == c) /= (a == c)
   where
-    f = (password l) !! ((mini l) - 1)
-    a = (password l) !! ((maxi l) - 1)
+    f = password l !! (mini l - 1)
+    a = password l !! (maxi l - 1)
     c = ch l
 
 solve2 :: [String] -> Int

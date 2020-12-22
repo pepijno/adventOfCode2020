@@ -1,22 +1,25 @@
-{-# language TypeFamilies #-}
+{-# LANGUAGE TypeFamilies #-}
+
 module Main where
 
-import Lib
-import Data.List
-import Data.Functor.Compose (Compose(..))
-import Data.Vector (Vector, (!), generate)
+import Control.Comonad (Comonad (..))
+import Control.Comonad.Representable.Store (Store (..), StoreT (..), experiment, store)
 import Data.Bool (bool)
-import Data.Distributive (Distributive(..))
-import Data.Functor.Rep (Representable(..), distributeRep)
-import Data.Functor.Identity (Identity(..))
-import Control.Comonad.Representable.Store (Store(..), StoreT(..), store, experiment)
-import Control.Comonad (Comonad(..))
+import Data.Distributive (Distributive (..))
+import Data.Functor.Compose (Compose (..))
+import Data.Functor.Identity (Identity (..))
+import Data.Functor.Rep (Representable (..), distributeRep)
+import Data.List
+import Data.List.Split (chunksOf)
 import qualified Data.Map.Strict as M
 import Data.Monoid (Sum, getSum)
-import Data.List.Split (chunksOf)
+import Data.Vector (Vector, generate, (!))
+import Lib
 
 type Coord3D = (Int, (Int, Int))
+
 type Grid3D = Store (Compose Vector (Compose Vector Vector)) Bool
+
 type Rule3D = Grid3D -> Bool
 
 instance Distributive Vector where
@@ -56,11 +59,14 @@ at3D :: [Coord3D] -> Coord3D -> [Coord3D]
 coords `at3D` origin = map (addCoords3D origin) coords
 
 parseGrid3D :: [String] -> [Coord3D]
-parseGrid3D xs = M.keys $ M.filter (=='#') m
-  where m = M.fromList [((0, (col, row)), b) | (row, line) <- zip [0..] xs, (col, b) <- zip [0..] line]
+parseGrid3D xs = M.keys $ M.filter (== '#') m
+  where
+    m = M.fromList [((0, (col, row)), b) | (row, line) <- zip [0 ..] xs, (col, b) <- zip [0 ..] line]
 
 type Coord4D = (Int, (Int, (Int, Int)))
+
 type Grid4D = Store (Compose Vector (Compose Vector (Compose Vector Vector))) Bool
+
 type Rule4D = Grid4D -> Bool
 
 neighbourCoords4D :: Coord4D -> [Coord4D]
@@ -89,14 +95,15 @@ at4D :: [Coord4D] -> Coord4D -> [Coord4D]
 coords `at4D` origin = map (addCoords4D origin) coords
 
 parseGrid4D :: [String] -> [Coord4D]
-parseGrid4D xs = M.keys $ M.filter (=='#') m
-  where m = M.fromList [((0, (0, (col, row))), b) | (row, line) <- zip [0..] xs, (col, b) <- zip [0..] line]
+parseGrid4D xs = M.keys $ M.filter (== '#') m
+  where
+    m = M.fromList [((0, (0, (col, row))), b) | (row, line) <- zip [0 ..] xs, (col, b) <- zip [0 ..] line]
 
 solve1 :: [String] -> Int
-solve1 = render3D . head . drop 6 . iterate (step3D basicRule3D) . mkGrid3D . parseGrid3D
+solve1 = render3D . (!! 6) . iterate (step3D basicRule3D) . mkGrid3D . parseGrid3D
 
 solve2 :: [String] -> Int
-solve2 = render4D . head . drop 6 . iterate (step4D basicRule4D) . mkGrid4D . parseGrid4D
+solve2 = render4D . (!! 6) . iterate (step4D basicRule4D) . mkGrid4D . parseGrid4D
 
-main :: IO()
+main :: IO ()
 main = mainWrapper "day17" solve1 solve2

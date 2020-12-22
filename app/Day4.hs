@@ -17,16 +17,16 @@ isValid k v = case k of
     let xx = drop (length v - 2) v
         yy = read $ take (length v - 2) v
      in (xx == "cm" && inRange yy 150 193) || (xx == "in" && inRange yy 59 76)
-  "hcl" -> (head v == '#') && (all (isHexDigit . toLower) $ tail v) && (length v == 7)
+  "hcl" -> (head v == '#') && all (isHexDigit . toLower) (tail v) && (length v == 7)
   "ecl" -> v `elem` ["amb", "blu", "brn", "gry", "grn", "hzl", "oth"]
-  "pid" -> (length v == 9) && (all isDigit v)
+  "pid" -> (length v == 9) && all isDigit v
   _ -> True
 
 parsePair :: Parser (String, String)
 parsePair = (,) <$> letters <* char ':' <*> many1 anyChar
 
 grouping :: [String] -> [[String]]
-grouping = map (concat . map words) . groupPairs
+grouping = map (concatMap words) . groupPairs
 
 parsePassport :: [String] -> Passport
 parsePassport = M.fromList . map (unsafeParse parsePair)
