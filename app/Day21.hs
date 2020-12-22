@@ -9,8 +9,8 @@ import Parser
 
 parseLine :: Parser [(String, [[String]])]
 parseLine = do
-  is <- sepBy whiteSpace stringLiteral
-  algs <- between (string " (contains ") (char ')') (sepBy (string ", ") stringLiteral)
+  is <- stringLiteral `sepBy` whiteSpace
+  algs <- between (string " (contains ") (char ')') (stringLiteral `sepBy` string ", ")
   return $ map (id &&& const [is]) algs
 
 parseAll :: [String] -> [(String, [[String]])]

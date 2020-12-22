@@ -27,7 +27,7 @@ parseInput :: Parser Bag
 parseInput = do
   bag <- parseBag
   string " contain "
-  children <- (string "no other bags" >> pure []) <| sepBy (string ", ") parseChild
+  children <- (string "no other bags" >> pure []) <| (parseChild `sepBy1` string ", ")
   char '.'
   return (bag, children)
 

@@ -19,7 +19,7 @@ parseSingleton = do
   return (id, Singleton c)
 
 parseMultiRule :: Parser (Int, Rule)
-parseMultiRule = (,) <$> natural <* string ": " <*> (Rule <$> ((,) <$> sepBy whiteSpace natural <*> (string " | " *> sepBy whiteSpace natural <|> pure [])))
+parseMultiRule = (,) <$> natural <* string ": " <*> (Rule <$> ((,) <$> natural `sepBy` whiteSpace <*> (string " | " *> natural `sepBy` whiteSpace <|> pure [])))
 
 parseRule :: Parser (Int, Rule)
 parseRule = parseSingleton <| parseMultiRule

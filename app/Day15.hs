@@ -1,24 +1,35 @@
 module Main where
 
-import qualified Data.Map.Strict as M
+import Control.Monad
+import Control.Monad.ST
+import qualified Data.Vector.Unboxed.Mutable as V
 import Lib
 
-nextNumber :: ((Int, Int), M.Map Int Int) -> ((Int, Int), M.Map Int Int)
-nextNumber ((a, b), m)
-  | not $ M.member a m = ((0, b + 1), M.insert a b m)
-  | otherwise = ((b - lastTurn, b + 1), M.insert a b m)
+findNumber :: Int -> [Int] -> Int
+findNumber i xs
+  | i < l = xs !! i
+  | otherwise = find' i
   where
-    lastTurn = M.findWithDefault 0 a m
+    l = length xs
+    find' target = runST $ do
+      let target' = target - l
+          y = last xs
+          v0 = zip (init xs) [1 ..]
+      v <- V.new i
+      forM_ v0 $ uncurry $ V.write v
+      stepM target' y l v
+    stepM 0 y _ _ = return y
+    stepM target' y l v = do
+      n <- V.read v y
+      let y' = if n == 0 then 0 else l - n
+      V.write v y l
+      stepM (target' - 1) y' (l + 1) v
 
 solve1 :: [String] -> Int
-solve1 xs = fst . fst . (!! max 0 (2020 - length pairs)) $ iterate nextNumber (last pairs, M.fromList $ init pairs)
-  where
-    pairs = zip (map read xs) [0 ..]
+solve1 = findNumber 2020 . map read
 
 solve2 :: [String] -> Int
-solve2 xs = fst . fst . (!! max 0 (30000000 - length pairs)) $ iterate nextNumber (last pairs, M.fromList $ init pairs)
-  where
-    pairs = zip (map read xs) [0 ..]
+solve2 = findNumber 30000000 . map read
 
 main :: IO ()
 main = mainWrapper "day15" solve1 solve2
