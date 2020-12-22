@@ -3,30 +3,32 @@ module Main where
 import Data.List
 import Lib
 
-diffs :: [Int] -> [Int]
+sortedInput :: [String] -> [Int]
+sortedInput xs = sort ys
+  where
+    xs' = map read xs
+    ys = 0 : (+ 3) (maximum xs') : xs'
+
+diffs :: [String] -> [Int]
 diffs xs = zipWith (-) (tail sorted) sorted
   where
-    withBeginEnd = 0 : ((+ 3) $ maximum xs) : xs
-    sorted = sort withBeginEnd
+    sorted = sortedInput xs
 
-countDiffs :: [Int] -> Int
+countDiffs :: [String] -> Int
 countDiffs xs = filteredLength (== 1) * filteredLength (== 3)
   where
     filteredLength f = count f . diffs $ xs
 
 solve1 :: [String] -> Int
-solve1 = countDiffs . map read
+solve1 = countDiffs
 
--- Note: there are only a maximum of 4 1's in a group and no 2's
-countArranges :: Int -> [Int] -> Int
-countArranges x [1] = x
-countArranges x [1, 1] = 2 * x
-countArranges x [1, 1, 1] = 4 * x
-countArranges x [1, 1, 1, 1] = 7 * x
-countArranges x _ = x
+dynamic :: [Int] -> [Int]
+dynamic xs = 1 : map sumPrevious (tail xs)
+  where
+    sumPrevious x = sum $ map snd $ takeWhile ((< x) . fst) $ dropWhile ((> 3) . (x -) . fst) $ zip xs (dynamic xs)
 
 solve2 :: [String] -> Int
-solve2 = foldl countArranges 1 . group . diffs . map read
+solve2 = last . dynamic . sortedInput
 
 main :: IO ()
 main = mainWrapper "day10" solve1 solve2
