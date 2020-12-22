@@ -34,7 +34,7 @@ ruleToParser m i = case m M.! i of
   Rule (xs, ys) -> (mapM_ (ruleToParser m) xs) <|> (mapM_ (ruleToParser m) ys)
 
 solve1 :: [String] -> Int
-solve1 xs = length . filter ((== 1) . length . filter ((== "") . snd)) $ map (parse parser) lines
+solve1 xs = count ((== 1) . count ((== "") . snd)) $ map (parse parser) lines
   where
     parser = flip ruleToParser 0 $ parseAll $ head $ groupPairs xs
     lines = last $ groupPairs xs

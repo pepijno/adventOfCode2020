@@ -34,11 +34,6 @@ parseInput = do
 parseAll :: [String] -> [Bag]
 parseAll = map (unsafeParse parseInput)
 
-converge :: (Eq a) => (a -> a) -> a -> a
-converge f x =
-  let x' = f x
-   in if x' == x then x else converge f x'
-
 countContained :: [Bag] -> Int
 countContained bs = length (converge containedByAny ["shinygold"]) - 1
   where

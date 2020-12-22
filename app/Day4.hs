@@ -35,13 +35,13 @@ validPassport1 :: Passport -> Bool
 validPassport1 = (== 7) . M.size . M.filterWithKey (\k _ -> k /= "cid")
 
 solve1 :: [String] -> Int
-solve1 = length . filter (validPassport1 . parsePassport) . grouping
+solve1 = count (validPassport1 . parsePassport) . grouping
 
 validPassport2 :: Passport -> Bool
 validPassport2 = (== 7) . M.size . M.filterWithKey (\k v -> k /= "cid" && isValid k v)
 
 solve2 :: [String] -> Int
-solve2 = length . filter (validPassport2 . parsePassport) . grouping
+solve2 = count (validPassport2 . parsePassport) . grouping
 
 main :: IO ()
 main = mainWrapper "day4" solve1 solve2

@@ -1,55 +1,48 @@
-{-# LANGUAGE ScopedTypeVariables #-}
 module Main where
 
-import Lib
-import Grid
+import Data.Bool
 import Data.Maybe
-import qualified Data.Map.Strict as M
-import GHC.List (iterate')
+import qualified Data.Vector as V
+import Lib
 
 data Spot = Empty | Filled | Floor deriving (Show, Eq)
 
-adjacent1 :: Grid Spot -> Coord -> [Spot]
-adjacent1 m pos = mapMaybe (flip M.lookup m) $ map ((!+) pos) dir8
+parseGrid :: [String] -> V.Vector (V.Vector Spot)
+parseGrid = V.fromList . map (V.fromList . map (bool Floor Empty . (== 'L')))
 
-walk :: Grid Spot -> Coord -> Dir8 -> Maybe Spot
-walk m pos dir = case M.lookup (step8 pos dir) m of
-                   Nothing -> Nothing
-                   Just c | c /= Floor -> Just c
-                   _ -> walk m (step8 pos dir) dir
+grid8los :: (a -> Bool) -> V.Vector (V.Vector a) -> (Int, Int) -> [a]
+grid8los isEmpty m (x, y) = mapMaybe (getFirst (x, y)) nbs
+  where
+    getFirst (x0, y0) (x, y) = do
+      v <- get (x0, y0) (x, y)
+      if isEmpty v then getFirst (x0 + x, y0 + y) (x, y) else return v
+    get (x0, y0) (x, y) = do
+      row <- m V.!? (y0 + y)
+      row V.!? (x0 + x)
+    nbs = [(x, y) | x <- [-1, 0, 1], y <- [-1, 0, 1], (x, y) /= (0, 0)]
 
-adjacent2 :: Grid Spot -> Coord -> [Spot]
-adjacent2 m pos = mapMaybe (walk m pos) (enumerate @Dir8)
+mapOverGrid :: (a -> Bool) -> (a -> [a] -> b) -> V.Vector (V.Vector a) -> V.Vector (V.Vector b)
+mapOverGrid isEmpty f m = V.imap (\y v -> V.imap (\x i -> modify i (x, y)) v) m
+  where
+    modify i pos = f i $ grid8los isEmpty m pos
 
-parseSpot :: Char -> Spot
-parseSpot '#' = Filled
-parseSpot 'L' = Empty
-parseSpot '.' = Floor
+updateSpot :: Int -> Spot -> [Spot] -> Spot
+updateSpot thresh s ss = case s of
+  Floor -> Floor
+  Empty -> if count (== Filled) ss == 0 then Filled else Empty
+  Filled -> if count (== Filled) ss >= thresh then Empty else Filled
 
-applyRule :: Int -> (Grid Spot -> Coord -> [Spot]) -> Grid Spot -> Coord -> Spot
-applyRule thresh adj m pos
-  | c == Empty = if not $ Filled `elem` adj' then Filled else Empty
-  | c == Filled = if (length $ filter (==Filled) adj') >= thresh then Empty else Filled
-  | otherwise = Floor
-  where adj' = adj m pos
-        c = M.findWithDefault Floor pos m
+step :: (Spot -> Bool) -> Int -> V.Vector (V.Vector Spot) -> V.Vector (V.Vector Spot)
+step f n = mapOverGrid f (updateSpot n)
 
-doStep :: (Grid Spot -> Coord -> Spot) -> (Grid Spot, Bool) -> (Grid Spot, Bool)
-doStep rule (m, _) = (m', m == m')
-  where m' = M.foldrWithKey' (foldF m) M.empty m
-        foldF mm k _ a = M.insert k (rule mm k) a
-
-solve' :: (Grid Spot -> Coord -> Spot) -> Grid Spot -> Grid Spot
-solve' rule m = fst . head . dropWhile ((==False) . snd) . iterate' (doStep rule) $ (m, False)
-
-solve :: Int -> (Grid Spot -> Coord -> [Spot]) -> [String] -> Int
-solve n adj = length . filter (==Filled) . M.elems . solve' (applyRule n adj) . parseGrid parseSpot
+countGrid :: (a -> Bool) -> V.Vector (V.Vector a) -> Int
+countGrid f = sum . map (count f) . map V.toList . V.toList
 
 solve1 :: [String] -> Int
-solve1 = solve 4 adjacent1
+solve1 = countGrid (== Filled) . converge (step (const False) 4) . parseGrid
 
 solve2 :: [String] -> Int
-solve2 = solve 5 adjacent2
+solve2 = countGrid (== Filled) . converge (step (== Floor) 5) . parseGrid
 
-main :: IO()
+main :: IO ()
 main = mainWrapper "day11" solve1 solve2
