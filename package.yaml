@@ -29,6 +29,7 @@ dependencies:
 - comonad
 - hashable
 - parsec
+- array
 
 library:
   source-dirs: src
@@ -45,6 +46,9 @@ _exe-defs: &exe-defaults
   - -with-rtsopts=-N
 
 executables:
+  day23:
+    main: Day23.hs
+    <<: *exe-defaults
   day22:
     main: Day22.hs
     <<: *exe-defaults
@@ -121,3 +125,4 @@ tests:
 default-extensions:
   - TypeApplications
   - LambdaCase
+  - FlexibleContexts

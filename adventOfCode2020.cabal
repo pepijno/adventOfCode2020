@@ -32,9 +32,10 @@ library
       Paths_adventOfCode2020
   hs-source-dirs:
       src
-  default-extensions: TypeApplications LambdaCase
+  default-extensions: TypeApplications LambdaCase FlexibleContexts
   build-depends:
       adjunctions
+    , array
     , base >=4.7 && <5
     , comonad
     , containers
@@ -50,11 +51,12 @@ executable day1
   main-is: Day1.hs
   hs-source-dirs:
       app
-  default-extensions: TypeApplications LambdaCase
+  default-extensions: TypeApplications LambdaCase FlexibleContexts
   ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       adjunctions
     , adventOfCode2020
+    , array
     , base >=4.7 && <5
     , comonad
     , containers
@@ -70,11 +72,12 @@ executable day10
   main-is: Day10.hs
   hs-source-dirs:
       app
-  default-extensions: TypeApplications LambdaCase
+  default-extensions: TypeApplications LambdaCase FlexibleContexts
   ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       adjunctions
     , adventOfCode2020
+    , array
     , base >=4.7 && <5
     , comonad
     , containers
@@ -90,11 +93,12 @@ executable day11
   main-is: Day11.hs
   hs-source-dirs:
       app
-  default-extensions: TypeApplications LambdaCase
+  default-extensions: TypeApplications LambdaCase FlexibleContexts
   ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       adjunctions
     , adventOfCode2020
+    , array
     , base >=4.7 && <5
     , comonad
     , containers
@@ -110,11 +114,12 @@ executable day12
   main-is: Day12.hs
   hs-source-dirs:
       app
-  default-extensions: TypeApplications LambdaCase
+  default-extensions: TypeApplications LambdaCase FlexibleContexts
   ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       adjunctions
     , adventOfCode2020
+    , array
     , base >=4.7 && <5
     , comonad
     , containers
@@ -130,11 +135,12 @@ executable day13
   main-is: Day13.hs
   hs-source-dirs:
       app
-  default-extensions: TypeApplications LambdaCase
+  default-extensions: TypeApplications LambdaCase FlexibleContexts
   ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       adjunctions
     , adventOfCode2020
+    , array
     , base >=4.7 && <5
     , comonad
     , containers
@@ -150,11 +156,12 @@ executable day14
   main-is: Day14.hs
   hs-source-dirs:
       app
-  default-extensions: TypeApplications LambdaCase
+  default-extensions: TypeApplications LambdaCase FlexibleContexts
   ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       adjunctions
     , adventOfCode2020
+    , array
     , base >=4.7 && <5
     , comonad
     , containers
@@ -170,11 +177,12 @@ executable day15
   main-is: Day15.hs
   hs-source-dirs:
       app
-  default-extensions: TypeApplications LambdaCase
+  default-extensions: TypeApplications LambdaCase FlexibleContexts
   ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       adjunctions
     , adventOfCode2020
+    , array
     , base >=4.7 && <5
     , comonad
     , containers
@@ -190,11 +198,12 @@ executable day16
   main-is: Day16.hs
   hs-source-dirs:
       app
-  default-extensions: TypeApplications LambdaCase
+  default-extensions: TypeApplications LambdaCase FlexibleContexts
   ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       adjunctions
     , adventOfCode2020
+    , array
     , base >=4.7 && <5
     , comonad
     , containers
@@ -210,11 +219,12 @@ executable day17
   main-is: Day17.hs
   hs-source-dirs:
       app
-  default-extensions: TypeApplications LambdaCase
+  default-extensions: TypeApplications LambdaCase FlexibleContexts
   ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       adjunctions
     , adventOfCode2020
+    , array
     , base >=4.7 && <5
     , comonad
     , containers
@@ -230,11 +240,12 @@ executable day18
   main-is: Day18.hs
   hs-source-dirs:
       app
-  default-extensions: TypeApplications LambdaCase
+  default-extensions: TypeApplications LambdaCase FlexibleContexts
   ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       adjunctions
     , adventOfCode2020
+    , array
     , base >=4.7 && <5
     , comonad
     , containers
@@ -250,11 +261,12 @@ executable day19
   main-is: Day19.hs
   hs-source-dirs:
       app
-  default-extensions: TypeApplications LambdaCase
+  default-extensions: TypeApplications LambdaCase FlexibleContexts
   ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       adjunctions
     , adventOfCode2020
+    , array
     , base >=4.7 && <5
     , comonad
     , containers
@@ -270,11 +282,12 @@ executable day2
   main-is: Day2.hs
   hs-source-dirs:
       app
-  default-extensions: TypeApplications LambdaCase
+  default-extensions: TypeApplications LambdaCase FlexibleContexts
   ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       adjunctions
     , adventOfCode2020
+    , array
     , base >=4.7 && <5
     , comonad
     , containers
@@ -290,11 +303,12 @@ executable day20
   main-is: Day20.hs
   hs-source-dirs:
       app
-  default-extensions: TypeApplications LambdaCase
+  default-extensions: TypeApplications LambdaCase FlexibleContexts
   ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       adjunctions
     , adventOfCode2020
+    , array
     , base >=4.7 && <5
     , comonad
     , containers
@@ -310,11 +324,12 @@ executable day21
   main-is: Day21.hs
   hs-source-dirs:
       app
-  default-extensions: TypeApplications LambdaCase
+  default-extensions: TypeApplications LambdaCase FlexibleContexts
   ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       adjunctions
     , adventOfCode2020
+    , array
     , base >=4.7 && <5
     , comonad
     , containers
@@ -330,11 +345,33 @@ executable day22
   main-is: Day22.hs
   hs-source-dirs:
       app
-  default-extensions: TypeApplications LambdaCase
+  default-extensions: TypeApplications LambdaCase FlexibleContexts
   ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       adjunctions
     , adventOfCode2020
+    , array
+    , base >=4.7 && <5
+    , comonad
+    , containers
+    , distributive
+    , extra
+    , hashable
+    , parsec
+    , split
+    , vector
+  default-language: Haskell2010
+
+executable day23
+  main-is: Day23.hs
+  hs-source-dirs:
+      app
+  default-extensions: TypeApplications LambdaCase FlexibleContexts
+  ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      adjunctions
+    , adventOfCode2020
+    , array
     , base >=4.7 && <5
     , comonad
     , containers
@@ -350,11 +387,12 @@ executable day3
   main-is: Day3.hs
   hs-source-dirs:
       app
-  default-extensions: TypeApplications LambdaCase
+  default-extensions: TypeApplications LambdaCase FlexibleContexts
   ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       adjunctions
     , adventOfCode2020
+    , array
     , base >=4.7 && <5
     , comonad
     , containers
@@ -370,11 +408,12 @@ executable day4
   main-is: Day4.hs
   hs-source-dirs:
       app
-  default-extensions: TypeApplications LambdaCase
+  default-extensions: TypeApplications LambdaCase FlexibleContexts
   ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       adjunctions
     , adventOfCode2020
+    , array
     , base >=4.7 && <5
     , comonad
     , containers
@@ -390,11 +429,12 @@ executable day5
   main-is: Day5.hs
   hs-source-dirs:
       app
-  default-extensions: TypeApplications LambdaCase
+  default-extensions: TypeApplications LambdaCase FlexibleContexts
   ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       adjunctions
     , adventOfCode2020
+    , array
     , base >=4.7 && <5
     , comonad
     , containers
@@ -410,11 +450,12 @@ executable day6
   main-is: Day6.hs
   hs-source-dirs:
       app
-  default-extensions: TypeApplications LambdaCase
+  default-extensions: TypeApplications LambdaCase FlexibleContexts
   ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       adjunctions
     , adventOfCode2020
+    , array
     , base >=4.7 && <5
     , comonad
     , containers
@@ -430,11 +471,12 @@ executable day7
   main-is: Day7.hs
   hs-source-dirs:
       app
-  default-extensions: TypeApplications LambdaCase
+  default-extensions: TypeApplications LambdaCase FlexibleContexts
   ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       adjunctions
     , adventOfCode2020
+    , array
     , base >=4.7 && <5
     , comonad
     , containers
@@ -450,11 +492,12 @@ executable day8
   main-is: Day8.hs
   hs-source-dirs:
       app
-  default-extensions: TypeApplications LambdaCase
+  default-extensions: TypeApplications LambdaCase FlexibleContexts
   ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       adjunctions
     , adventOfCode2020
+    , array
     , base >=4.7 && <5
     , comonad
     , containers
@@ -470,11 +513,12 @@ executable day9
   main-is: Day9.hs
   hs-source-dirs:
       app
-  default-extensions: TypeApplications LambdaCase
+  default-extensions: TypeApplications LambdaCase FlexibleContexts
   ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       adjunctions
     , adventOfCode2020
+    , array
     , base >=4.7 && <5
     , comonad
     , containers
@@ -491,11 +535,12 @@ test-suite adventOfCode2020-test
   main-is: Spec.hs
   hs-source-dirs:
       test
-  default-extensions: TypeApplications LambdaCase
+  default-extensions: TypeApplications LambdaCase FlexibleContexts
   ghc-options: -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       adjunctions
     , adventOfCode2020
+    , array
     , base >=4.7 && <5
     , comonad
     , containers

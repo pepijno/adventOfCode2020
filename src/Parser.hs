@@ -81,7 +81,7 @@ satisfy f = Parser $ \case
 
 munch :: (Char -> Bool) -> Parser String
 munch f = Parser $ \input -> do
-  return span f input
+  return $ span f input
 
 munch1 :: (Char -> Bool) -> Parser String
 munch1 f = Parser $ \input ->
