@@ -154,7 +154,7 @@ findMonsters xss = filter isMonster pairs
 solve2 :: [String] -> Int
 solve2 xs = minimum $ map ((\x -> e - x * 15) . length . findMonsters) $ allOrientations bla
   where
-    bla = concatMap (concatLine . map submatrix . reverse) $ transformImage [] $ map (\x -> toImage [] x sqs) $ fst $ last $ take 144 $ iterate (uncurry constructImage) ([[corner]], removeFromMap corner m)
+    bla = concatMap (concatLine . map submatrix . reverse) $ transformImage [] $ map (\x -> toImage [] x sqs) $ fst $ nSteps 143 (uncurry constructImage) ([[corner]], removeFromMap corner m)
     sqs = M.fromList $ map ((tileRuleToId . head) &&& tail) $ groupPairs xs
     m = updateNeighbours (M.keys sqs) $ M.fromList $ findAllNeighbours (M.keys sqs) sqs
     corner = head $ M.keys $ M.filter ((== 2) . length) m

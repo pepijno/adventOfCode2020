@@ -7,6 +7,7 @@ module Lib
     mapFst,
     mapSnd,
     converge,
+    nSteps,
   )
 where
 
@@ -43,3 +44,6 @@ converge :: (Eq a) => (a -> a) -> a -> a
 converge f x =
   let x' = f x
    in if x' == x then x else converge f x'
+
+nSteps :: Int -> (a -> a) -> (a -> a)
+nSteps n f = (!! n) . iterate f

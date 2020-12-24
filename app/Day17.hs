@@ -100,10 +100,10 @@ parseGrid4D xs = M.keys $ M.filter (== '#') m
     m = M.fromList [((0, (0, (col, row))), b) | (row, line) <- zip [0 ..] xs, (col, b) <- zip [0 ..] line]
 
 solve1 :: [String] -> Int
-solve1 = render3D . (!! 6) . iterate (step3D basicRule3D) . mkGrid3D . parseGrid3D
+solve1 = render3D . nSteps 6 (step3D basicRule3D) . mkGrid3D . parseGrid3D
 
 solve2 :: [String] -> Int
-solve2 = render4D . (!! 6) . iterate (step4D basicRule4D) . mkGrid4D . parseGrid4D
+solve2 = render4D . nSteps 6 (step4D basicRule4D) . mkGrid4D . parseGrid4D
 
 main :: IO ()
 main = mainWrapper "day17" solve1 solve2

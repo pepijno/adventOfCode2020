@@ -31,16 +31,6 @@ runGame steps start cs = runSTUArray $ do
         writeArray m n a
         readArray m x >>= step (cnt -1) m
 
-part1 :: String -> String
-part1 input =
-  let m = uncurry (runGame 100) $ parse $ map digitToInt input
-   in map intToDigit $ takeWhile (/= 1) $ tail $ iterate (m !) 1
-
-part2 :: String -> Int
-part2 input =
-  let m = uncurry (runGame (10 ^ 7)) $ parse $ map digitToInt input ++ [10 .. 10 ^ 6]
-   in m ! 1 * m ! (m ! 1)
-
 toSolution :: Int -> UArray Int Int -> String
 toSolution xs cs
   | x == 1 = ""

@@ -72,7 +72,7 @@ isDepartureCondition :: Condition -> Bool
 isDepartureCondition = isPrefixOf "departure" . name
 
 solve2 :: [String] -> Int
-solve2 xs = (product . map ((my !!) . fst) . filter (isDepartureCondition . snd) . last . take 21 . iterate (repeatFilter vcs)) []
+solve2 xs = (product . map ((my !!) . fst) . filter (isDepartureCondition . snd) . nSteps 20 (repeatFilter vcs)) []
   where
     (cs, my, ts) = parseInput xs
     ts' = (transpose . filter ((== 0) . sumOfNotValid cs)) ts
