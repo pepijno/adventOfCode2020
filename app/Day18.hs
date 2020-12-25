@@ -5,7 +5,7 @@ import Lib
 import Parser
 
 ops :: [Char] -> Parser Char
-ops cs = char ' ' *> foldl (\a c -> a <|> char c) empty cs <* char ' '
+ops cs = char ' ' *> choice (map char cs) <* char ' '
 
 expr :: [Char] -> [Char] -> Parser Int
 expr cs ds = eval <$> term cs ds <*> many ((,) <$> ops cs <*> term cs ds)

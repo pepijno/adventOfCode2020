@@ -2,7 +2,7 @@ module Main where
 
 import Control.Monad
 import Data.Either
-import qualified Data.Map.Strict as M
+import qualified Data.IntMap as M
 import Data.Maybe
 import Lib
 import Parser
@@ -24,10 +24,10 @@ parseMultiRule = (,) <$> natural <* string ": " <*> (Rule <$> ((,) <$> natural `
 parseRule :: Parser (Int, Rule)
 parseRule = parseSingleton <| parseMultiRule
 
-parseAll :: [String] -> M.Map Int Rule
+parseAll :: [String] -> M.IntMap Rule
 parseAll = M.fromList . map (unsafeParse parseRule)
 
-ruleToParser :: M.Map Int Rule -> Int -> Parser ()
+ruleToParser :: M.IntMap Rule -> Int -> Parser ()
 ruleToParser m i = case m M.! i of
   Singleton c -> void $ char c
   Rule (xs, []) -> mapM_ (ruleToParser m) xs

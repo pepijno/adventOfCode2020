@@ -4,8 +4,8 @@ module Main where
 
 import Control.Arrow
 import Data.Function
+import qualified Data.IntMap as M
 import Data.List
-import qualified Data.Map.Strict as M
 import Lib
 
 rot90 :: [[a]] -> [[a]]
@@ -26,7 +26,7 @@ isNeighbour x y = not $ null $ intersect ys xs
     xs = map head $ allOrientations x
     ys = map head $ allOrientations y
 
-findNeighbours :: Int -> M.Map Int [String] -> [Int]
+findNeighbours :: Int -> M.IntMap [String] -> [Int]
 findNeighbours i m = M.keys $ M.filter (isNeighbour (m M.! i)) m'
   where
     m' = M.delete i m
@@ -34,7 +34,7 @@ findNeighbours i m = M.keys $ M.filter (isNeighbour (m M.! i)) m'
 tileRuleToId :: String -> Int
 tileRuleToId = read . init . drop 5
 
-findAllNeighbours :: [Int] -> M.Map Int [String] -> [(Int, [Int])]
+findAllNeighbours :: [Int] -> M.IntMap [String] -> [(Int, [Int])]
 findAllNeighbours [] _ = []
 findAllNeighbours (i : is) m = (i, findNeighbours i m) : findAllNeighbours is m'
   where
@@ -48,9 +48,9 @@ findShortest xs
   where
     xs' = filter ((>) 12 . length . snd) $ sortBy (compare `on` length . snd) $ zip [0 ..] xs
 
-updateNeighbours :: [Int] -> M.Map Int [Int] -> M.Map Int [Int]
+updateNeighbours :: [Int] -> M.IntMap [Int] -> M.IntMap [Int]
 updateNeighbours [] m = m
-updateNeighbours (i : is) m = updateNeighbours is (foldl (\m x -> M.insert x (nub $ (i :) $ m M.! x) m) m (m M.! i))
+updateNeighbours (i : is) m = updateNeighbours is (foldl' (\m x -> M.insert x (nub $ (i :) $ m M.! x) m) m (m M.! i))
 
 addToMatrix :: Int -> Int -> [[Int]] -> [[Int]]
 addToMatrix y i xs
@@ -59,10 +59,10 @@ addToMatrix y i xs
   where
     b = xs !! y
 
-removeFromMap :: Int -> M.Map Int [Int] -> M.Map Int [Int]
+removeFromMap :: Int -> M.IntMap [Int] -> M.IntMap [Int]
 removeFromMap i m = M.fromList $ map (\(a, b) -> (a, (\\) b [i])) $ M.toList m
 
-constructImage :: [[Int]] -> M.Map Int [Int] -> ([[Int]], M.Map Int [Int])
+constructImage :: [[Int]] -> M.IntMap [Int] -> ([[Int]], M.IntMap [Int])
 constructImage xs m
   | y == 0 || x == 0 = (addToMatrix y (head $ m M.! left) xs, removeFromMap (head $ m M.! left) m)
   | otherwise = (addToMatrix y both xs, removeFromMap both m)
@@ -74,7 +74,7 @@ constructImage xs m
     both = head $ intersect (m M.! left) (m M.! up)
 
 solve1 :: [String] -> Int
-solve1 xs = M.foldlWithKey (\p k _ -> k * p) 1 $ M.filter ((== 2) . length) $ updateNeighbours (M.keys sqs) $ M.fromList $ findAllNeighbours (M.keys sqs) sqs
+solve1 xs = M.foldlWithKey' (\p k _ -> k * p) 1 $ M.filter ((== 2) . length) $ updateNeighbours (M.keys sqs) $ M.fromList $ findAllNeighbours (M.keys sqs) sqs
   where
     sqs = M.fromList $ map ((tileRuleToId . head) &&& tail) $ groupPairs xs
 
@@ -96,7 +96,7 @@ transformCorrect' l right = head $ filter (\x -> rc == head (transpose x)) r
 pairToList :: (a, a) -> [a]
 pairToList (x, y) = [x, y]
 
-toImage :: [String] -> [Int] -> M.Map Int [String] -> [[String]]
+toImage :: [String] -> [Int] -> M.IntMap [String] -> [[String]]
 toImage _ [] m = []
 toImage [] (x : y : xs) m = pairToList pair ++ toImage (snd pair) xs m
   where

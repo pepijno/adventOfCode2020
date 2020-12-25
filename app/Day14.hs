@@ -1,6 +1,7 @@
 module Main where
 
 import Data.Bits
+import Data.List
 import qualified Data.Map.Strict as M
 import qualified Data.Set as S
 import Lib
@@ -43,20 +44,20 @@ doInstruction (a, m) (WriteMem mem i) = (a, M.insert mem val m)
     val = applyMask a i
 
 solve1 :: [String] -> Integer
-solve1 = sum . map snd . M.toList . snd . foldl doInstruction ((0, 0), M.empty) . map (unsafeParse parseInstruction)
+solve1 = sum . map snd . M.toList . snd . foldl' doInstruction ((0, 0), M.empty) . map (unsafeParse parseInstruction)
 
 doInstruction2 :: ((Integer, Integer, S.Set Integer), M.Map Integer Integer) -> Instruction -> ((Integer, Integer, S.Set Integer), M.Map Integer Integer)
 doInstruction2 (_, m) (Mask (a, _, s)) = ((a, b', s'), m)
   where
-    s' = S.map (S.foldl setBit 0) $ S.powerSet s
-    b' = S.foldl setBit 0 s
-doInstruction2 (a@(x, y, s), m) (WriteMem mem i) = (a, foldl (\m' addr -> M.insert addr i m') m addrs)
+    s' = S.map (S.foldl' setBit 0) $ S.powerSet s
+    b' = S.foldl' setBit 0 s
+doInstruction2 (a@(x, y, s), m) (WriteMem mem i) = (a, foldl' (\m' addr -> M.insert addr i m') m addrs)
   where
     mem' = applyMask (x, y) mem
     addrs = map (mem' .|.) $ S.toList s
 
 solve2 :: [String] -> Integer
-solve2 = sum . map snd . M.toList . snd . foldl doInstruction2 ((0, 0, S.empty), M.empty) . map (unsafeParse parseInstruction)
+solve2 = sum . map snd . M.toList . snd . foldl' doInstruction2 ((0, 0, S.empty), M.empty) . map (unsafeParse parseInstruction)
 
 main :: IO ()
 main = mainWrapper "day14" solve1 solve2
